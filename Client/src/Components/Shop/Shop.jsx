@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Shop = () => {
   return (
     <>
@@ -38,7 +40,9 @@ const Shop = () => {
                   <a href="#">
                     <h1>nVidia RTX 4080 - $499.00</h1>
                   </a>
-                  <button className="detailsButton">Details</button>
+                  <Link to="/product">
+                    <button className="detailsButton">Details</button>
+                  </Link>
                   <button className="detailsButton">Buy</button>
                 </div>
               </div>
@@ -54,7 +58,9 @@ const Shop = () => {
                   <a href="#">
                     <h1>Vengeance DDR5 - $89.00</h1>
                   </a>
-                  <button className="detailsButton">Details</button>
+                  <Link to="/product">
+                    <button className="detailsButton">Details</button>
+                  </Link>
                   <button className="detailsButton">Buy</button>
                 </div>
               </div>

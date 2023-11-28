@@ -34,9 +34,15 @@ const SingleItem = () => {
               </div>
             </div>
             <div className="col-md-4">
-              <a href="#" className="btn btn-buynow">
+              {/* <a href="#" className="btn btn-buynow">
                 $49.00 - Purchase
-              </a>
+              </a> */}
+              <button
+                onClick={() => console.log("buyed item!")}
+                className="btn btn-buynow"
+              >
+                Purchase! - 88.88$
+              </button>
               <div className="properties-box">
                 <ul className="unstyle">
                   <li>

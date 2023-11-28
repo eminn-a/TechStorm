@@ -23,11 +23,14 @@ const HeaderTemplate = () => {
                 <li>
                   <Link to="/shop">Shop</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/product">Product</Link>
+                </li> */}
+                <li>
+                  <Link to="/addProduct">Add product</Link>
                 </li>
                 <li>
-                  <Link to="/checkout">Checkout</Link>
+                  <Link to="/checkout">Add news</Link>
                 </li>
                 <li>
                   <Link to="/login">LogIn</Link>
