@@ -7,6 +7,7 @@ import Shop from "./Components/Shop/Shop";
 import Product from "./Components/Product/Product";
 import Login from "./Components/Login/Login";
 import AddProduct from "./Components/AddProduct/AddProduct";
+import AddNews from "./Components/AddNews/AddNews";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Product />} />
         <Route path="/addProduct" element={<AddProduct />} />
+        <Route path="/addNews" element={<AddNews />} />
       </Routes>
 
       <FooterTemplate />
