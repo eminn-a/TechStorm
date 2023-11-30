@@ -19,7 +19,7 @@ const LatestNewsTemp = () => {
                 alt=""
               />
               <h1 className="text-center subtitle">
-                New Inter 14th generation
+                New Intel 14th generation
               </h1>
               <p>
                 If you wish to change an element to look or function differently
@@ -50,11 +50,12 @@ const LatestNewsTemp = () => {
           <div className="col-md-4">
             <div className="infoareawrap">
               <img src="/images/test.jpg" alt="" />
-              <h1 className="text-center subtitle">Hire Us</h1>
+              <h1 className="text-center subtitle">Fun facts</h1>
               <p>
-                If you wish to change an element to look or function differently
-                than shown in the demo, we will be glad to assist you. This is a
-                paid service due to theme support requests solved with priority.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi,
+                dolorum! Debitis magni, illum nostrum impedit nihil laborum.
+                Animi iusto, deserunt quibusdam at, id ea ullam molestiae
+                repellat veritatis recusandae et.
               </p>
               <p className="text-center">
                 <a href="#">- See details -</a>

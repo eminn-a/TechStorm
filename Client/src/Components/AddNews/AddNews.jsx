@@ -27,6 +27,11 @@ const AddNews = () => {
             <form method="post" action="contact.php" id="contactform">
               <div className="form">
                 <input type="text" name="title" placeholder="Title Here *" />
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Small Description *"
+                />
 
                 <textarea
                   name="comment"
