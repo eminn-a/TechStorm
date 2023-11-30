@@ -17,6 +17,14 @@ const Login = () => {
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2">
             <div className="done">
+              <div className="alert alert-danger">
+                <button type="button" className="close" data-dismiss="alert">
+                  ×
+                </button>
+                Email or password doesn't match !
+              </div>
+            </div>
+            <div className="done">
               <div className="alert alert-success">
                 <button type="button" className="close" data-dismiss="alert">
                   ×

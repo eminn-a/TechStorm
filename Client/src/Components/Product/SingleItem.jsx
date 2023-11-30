@@ -18,7 +18,11 @@ const SingleItem = () => {
           <div className="row">
             <div className="col-md-8">
               <div className="productbox">
-                <img src="images/lastProduct.jpg" className="center" alt="" />
+                <img
+                  src="https://desktop.bg/system/images/330952/original/asus_dual_geforce_rtx_3060_v2_oc.png"
+                  className="center"
+                  alt=""
+                />
                 <div className="clearfix"></div>
                 <br />
                 <div className="product-details text-left">
