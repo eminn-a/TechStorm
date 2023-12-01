@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AlsoLike = () => {
   return (
     <section className="item content">
@@ -19,15 +21,18 @@ const AlsoLike = () => {
           <div className="productbox">
             <div className="fadeshop">
               <span className="maxproduct">
-                <img src="images/GeForce_ADA_RTX4080_Back.jpg" alt="" />
+                <img
+                  src="https://ardes.bg/uploads/p/asus-g713-rog-strix-g17-2023-463387.jpg"
+                  alt=""
+                />
               </span>
             </div>
             <div className="product-details">
-              <a href="product.html">
-                <h1>FastSell Theme</h1>
-              </a>
+              <Link to="/product">
+                <h1>ASUS ROG Strix G17</h1>
+              </Link>
               <span className="price">
-                <span className="edd_price">$49.00</span>
+                <span className="edd_price">$1649.00</span>
               </span>
             </div>
           </div>
@@ -37,15 +42,18 @@ const AlsoLike = () => {
           <div className="productbox">
             <div className="fadeshop">
               <span className="maxproduct">
-                <img src="images/dark_Pro.jpg" alt="" />
+                <img
+                  src="https://ardes.bg/uploads/p/acer-predator-ph18-71-helios-18-433650.jpg"
+                  alt=""
+                />
               </span>
             </div>
             <div className="product-details">
-              <a href="#">
-                <h1>Biscaya Theme</h1>
-              </a>
+              <Link to="/product">
+                <h1>Acer Predator Helios 18</h1>
+              </Link>
               <span className="price">
-                <span className="edd_price">$49.00</span>
+                <span className="edd_price">$1599.00</span>
               </span>
             </div>
           </div>
@@ -55,15 +63,18 @@ const AlsoLike = () => {
           <div className="productbox">
             <div className="fadeshop">
               <span className="maxproduct">
-                <img src="images/thermal_armor.png" alt="" />
+                <img
+                  src="https://ardes.bg/uploads/p/hp-probook-450-g8-300583.jpg"
+                  alt=""
+                />
               </span>
             </div>
             <div className="product-details">
-              <a href="#">
-                <h1>Biscaya Theme</h1>
-              </a>
+              <Link to="/product">
+                <h1>HP ProBook 450 G9</h1>
+              </Link>
               <span className="price">
-                <span className="edd_price">$49.00</span>
+                <span className="edd_price">$649.00</span>
               </span>
             </div>
           </div>

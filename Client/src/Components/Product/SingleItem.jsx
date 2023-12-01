@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+
 const SingleItem = () => {
+  useEffect(() => {
+    //  scroll to top on page load
+    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
       <section className="item content">
@@ -19,7 +26,7 @@ const SingleItem = () => {
             <div className="col-md-8">
               <div className="productbox">
                 <img
-                  src="https://desktop.bg/system/images/330952/original/asus_dual_geforce_rtx_3060_v2_oc.png"
+                  src="https://ardes.bg/uploads/p/asus-g713-rog-strix-g17-2023-463387.jpg"
                   className="center"
                   alt=""
                 />
@@ -27,20 +34,14 @@ const SingleItem = () => {
                 <br />
                 <div className="product-details text-left">
                   <p>
-                    Your description here. Serenity is a highly-professional &
-                    modern website theme crafted with you, the user, in mind.
-                    This light-weight theme is generous, built with custom types
-                    and enough shortcodes to customize each page according to
-                    your project. You will notice some examples of pages in
-                    demo, but this theme can do much more.
+                    Лаптоп ASUS TUF Gaming F15 FX507ZV4-HQ050, 15.6", WQHD,
+                    Intel Core i7-12700H (1.7/4.7GHz, 24M), NVIDIA RTX 4060 8GB
+                    GDDR6 DLSS 3, 16 GB, 1 TB SSD - 90NR0FA7-M007R0
                   </p>
                 </div>
               </div>
             </div>
             <div className="col-md-4">
-              {/* <a href="#" className="btn btn-buynow">
-                $49.00 - Purchase
-              </a> */}
               <button
                 onClick={() => console.log("buyed item!")}
                 className="btn btn-buynow"
@@ -50,35 +51,30 @@ const SingleItem = () => {
               <div className="properties-box">
                 <ul className="unstyle">
                   <li>
-                    <b className="propertyname">Version:</b> 1.0
+                    <b className="propertyname">CPU:</b> Intel Core i7-12700H
+                    (1.7/4.7GHz, 24M)
                   </li>
                   <li>
-                    <b className="propertyname">Image Size:</b> 2340x1200
+                    <b className="propertyname">GPU:</b> NVIDIA RTX 4060 8GB
+                    GDDR6 DLSS 3
                   </li>
                   <li>
-                    <b className="propertyname">Files Included:</b> mp3, audio,
-                    jpeg, png
+                    <b className="propertyname">RAM:</b> 16 GB DDR4 3200 MHz
                   </li>
                   <li>
-                    <b className="propertyname">Documentation:</b> Well
-                    Documented
+                    <b className="propertyname">Storage:</b> 1TB M.2 NVMe SSD
                   </li>
                   <li>
-                    <b className="propertyname">License:</b> GNU
+                    <b className="propertyname">Display:</b> 15.6" WQHD IPS
                   </li>
                   <li>
-                    <b className="propertyname">Requires:</b> Easy Digital
-                    Downloads
+                    <b className="propertyname">Display Hz:</b> 165 Hz
                   </li>
                   <li>
-                    <b className="propertyname">Environment:</b> Wordpress
+                    <b className="propertyname">OS:</b> Windows 10
                   </li>
                   <li>
-                    <b className="propertyname">Any Field Etc:</b> Any Detail
-                  </li>
-                  <li>
-                    <b className="propertyname">Number:</b> Up to 20
-                    specifications in this box
+                    <b className="propertyname">Warranty:</b> 24 months
                   </li>
                   <li>
                     <b className="propertyname">Live Demo:</b>

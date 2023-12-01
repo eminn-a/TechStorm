@@ -39,50 +39,24 @@ const Shop = () => {
               <div className="productbox">
                 <div className="fadeshop">
                   <span className="maxproduct">
-                    <img src="images/GeForce_ADA_RTX4080_Back.jpg" alt="" />
+                    <img
+                      src="https://ardes.bg/uploads/p/msi-thin-gf63-12v-12u-472959.jpg"
+                      alt=""
+                    />
                   </span>
                 </div>
                 <div className="product-details">
-                  <a href="#">
-                    <h1>nVidia RTX 4080 - $499.00</h1>
-                  </a>
+                  <Link to="/product">
+                    <h1>MSI Thin GF63 12VF</h1>
+                  </Link>
+                  <div>
+                    <h6>NVIDIA RTX 4060 8GB GDDR6 DLSS 3</h6>
+                    <h6>Intel Core i7-12650H (1.7/4.7GHz, 24M)</h6>
+                    <h6>512GB M.2 NVMe SSD</h6>
+                  </div>
                   <Link to="/product">
                     <button className="detailsButton">Details</button>
                   </Link>
-                  <button className="detailsButton">Buy</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="productbox">
-                <div className="fadeshop">
-                  <span className="maxproduct">
-                    <img src="images/vengeance_ram.webp" alt="" />
-                  </span>
-                </div>
-                <div className="product-details">
-                  <a href="#">
-                    <h1>Vengeance DDR5 - $89.00</h1>
-                  </a>
-                  <Link to="/product">
-                    <button className="detailsButton">Details</button>
-                  </Link>
-                  <button className="detailsButton">Buy</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="productbox">
-                <div className="fadeshop">
-                  <span className="maxproduct">
-                    <img src="images/dark_Pro.jpg" alt="" />
-                  </span>
-                </div>
-                <div className="product-details">
-                  <a href="#">
-                    <h1>Dark Pro Cooler - $89.00</h1>
-                  </a>
-                  <button className="detailsButton">Details</button>
                   <button className="detailsButton">Buy</button>
                 </div>
               </div>
@@ -92,16 +66,25 @@ const Shop = () => {
                 <div className="fadeshop">
                   <span className="maxproduct">
                     <img
-                      src="images/Intel-Core-14th-Gen-Desktop-Lineup.jpg"
+                      src="https://ardes.bg/uploads/p/asus-g713-rog-strix-g17-2023-463389.jpg"
                       alt=""
                     />
                   </span>
                 </div>
                 <div className="product-details">
-                  <a href="#">
-                    <h1>nVidia RTX 4080 - $499.00</h1>
-                  </a>
-                  <button className="detailsButton">Details</button>
+                  <Link to="/product">
+                    <h1>ASUS ROG Strix G17</h1>
+                  </Link>
+                  <div>
+                    <div>
+                      <h6>NVIDIA RTX 4070 8GB GDDR6 DLSS 3</h6>
+                      <h6>AMD Ryzen 9 7845HX (3.0/5.2GHz, 12M)</h6>
+                      <h6>512GB M.2 NVMe SSD</h6>
+                    </div>
+                  </div>
+                  <Link to="/product">
+                    <button className="detailsButton">Details</button>
+                  </Link>
                   <button className="detailsButton">Buy</button>
                 </div>
               </div>
@@ -110,14 +93,24 @@ const Shop = () => {
               <div className="productbox">
                 <div className="fadeshop">
                   <span className="maxproduct">
-                    <img src="images/rtx3060ti.jpg" alt="" />
+                    <img
+                      src="https://ardes.bg/uploads/p/acer-predator-ph18-71-helios-18-433650.jpg"
+                      alt=""
+                    />
                   </span>
                 </div>
                 <div className="product-details">
-                  <a href="#">
-                    <h1>Vengeance DDR5 - $89.00</h1>
-                  </a>
-                  <button className="detailsButton">Details</button>
+                  <Link to="/product">
+                    <h1>Acer Predator Helios 18</h1>
+                  </Link>
+                  <div>
+                    <h6>NVIDIA RTX 4070 8GB GDDR6 DLSS 3</h6>
+                    <h6>Intel Core i9-13900HX (1.6/5.4GHz, 36M)</h6>
+                    <h6>1TB M.2 NVMe SSD</h6>
+                  </div>
+                  <Link to="/product">
+                    <button className="detailsButton">Details</button>
+                  </Link>
                   <button className="detailsButton">Buy</button>
                 </div>
               </div>
@@ -126,14 +119,24 @@ const Shop = () => {
               <div className="productbox">
                 <div className="fadeshop">
                   <span className="maxproduct">
-                    <img src="images/thermal_armor.png" alt="" />
+                    <img
+                      src="https://ardes.bg/uploads/p/msi-thin-gf63-12v-12u-472959.jpg"
+                      alt=""
+                    />
                   </span>
                 </div>
                 <div className="product-details">
-                  <a href="#">
-                    <h1>Dark Pro Cooler - $89.00</h1>
-                  </a>
-                  <button className="detailsButton">Details</button>
+                  <Link to="/product">
+                    <h1>MSI Thin GF63 12VF</h1>
+                  </Link>
+                  <div>
+                    <h6>NVIDIA RTX 4060 8GB GDDR6 DLSS 3</h6>
+                    <h6>Intel Core i7-12650H (1.7/4.7GHz, 24M)</h6>
+                    <h6>512GB M.2 NVMe SSD</h6>
+                  </div>
+                  <Link to="/product">
+                    <button className="detailsButton">Details</button>
+                  </Link>
                   <button className="detailsButton">Buy</button>
                 </div>
               </div>
@@ -142,14 +145,52 @@ const Shop = () => {
               <div className="productbox">
                 <div className="fadeshop">
                   <span className="maxproduct">
-                    <img src="images/vengeance_ram.webp" alt="" />
+                    <img
+                      src="https://ardes.bg/uploads/p/asus-g713-rog-strix-g17-2023-463389.jpg"
+                      alt=""
+                    />
                   </span>
                 </div>
                 <div className="product-details">
-                  <a href="#">
-                    <h1>Vengeance DDR5 - $89.00</h1>
-                  </a>
-                  <button className="detailsButton">Details</button>
+                  <Link to="/product">
+                    <h1>ASUS ROG Strix G17</h1>
+                  </Link>
+                  <div>
+                    <div>
+                      <h6>NVIDIA RTX 4070 8GB GDDR6 DLSS 3</h6>
+                      <h6>AMD Ryzen 9 7845HX (3.0/5.2GHz, 12M)</h6>
+                      <h6>512GB M.2 NVMe SSD</h6>
+                    </div>
+                  </div>
+                  <Link to="/product">
+                    <button className="detailsButton">Details</button>
+                  </Link>
+                  <button className="detailsButton">Buy</button>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="productbox">
+                <div className="fadeshop">
+                  <span className="maxproduct">
+                    <img
+                      src="https://ardes.bg/uploads/p/acer-predator-ph18-71-helios-18-433650.jpg"
+                      alt=""
+                    />
+                  </span>
+                </div>
+                <div className="product-details">
+                  <Link to="/product">
+                    <h1>Acer Predator Helios 18</h1>
+                  </Link>
+                  <div>
+                    <h6>NVIDIA RTX 4070 8GB GDDR6 DLSS 3</h6>
+                    <h6>Intel Core i9-13900HX (1.6/5.4GHz, 36M)</h6>
+                    <h6>1TB M.2 NVMe SSD</h6>
+                  </div>
+                  <Link to="/product">
+                    <button className="detailsButton">Details</button>
+                  </Link>
                   <button className="detailsButton">Buy</button>
                 </div>
               </div>

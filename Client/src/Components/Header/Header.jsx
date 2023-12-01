@@ -50,7 +50,7 @@ const HeaderTemplate = () => {
             <div className="col-md-12 text-center">
               <div className="text-homeimage">
                 <div className="maintext-image">Tech Storm</div>
-                <div className="subtext-image">The PC store</div>
+                <div className="subtext-image">The Laptop Store</div>
               </div>
             </div>
           </div>
