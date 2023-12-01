@@ -61,6 +61,35 @@ const CheckOut = () => {
                     </td>
                   </tr>
                   {/* ------- */}
+                  {/* a singel item */}
+                  <tr
+                    className="edd_cart_item"
+                    id="edd_cart_item_0_25"
+                    data-download-id="25"
+                  >
+                    <td className="edd_cart_item_name">
+                      <div className="edd_cart_item_image">
+                        <Link to="/product">
+                          <h4>ASUS TUF Gaming F15</h4>
+                          <img
+                            src="https://ardes.bg/uploads/p/asus-fx507-tuf-gaming-f15-2023-439875.jpg"
+                            alt="id"
+                          />
+                        </Link>
+                      </div>
+                    </td>
+
+                    <td className="edd_cart_item_price">$1458</td>
+                    <td className="edd_cart_actions">
+                      <button
+                        className="detailsButton"
+                        onClick={() => console.log("removed!")}
+                      >
+                        Remove
+                      </button>
+                    </td>
+                  </tr>
+                  {/* ------- */}
                 </tbody>
                 <tfoot>
                   <tr className="edd_cart_footer_row">
