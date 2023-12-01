@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+
 const Login = () => {
+  useEffect(() => {
+    //  scroll to top on page load
+    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <section className="item content">
       <div className="container toparea">

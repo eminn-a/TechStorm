@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Shop = () => {
+  useEffect(() => {
+    //  scroll to top on page load
+    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <>
       <section className="item content">
