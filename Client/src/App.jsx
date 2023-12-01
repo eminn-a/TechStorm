@@ -22,7 +22,6 @@ function App() {
         <Route path="/addProduct" element={<AddProduct />} />
         <Route path="/addNews" element={<AddNews />} />
       </Routes>
-
       <FooterTemplate />
     </>
   );

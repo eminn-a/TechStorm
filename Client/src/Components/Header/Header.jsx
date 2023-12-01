@@ -23,9 +23,12 @@ const HeaderTemplate = () => {
                 <li>
                   <Link to="/shop">Shop</Link>
                 </li>
-                {/* <li>
-                  <Link to="/product">Product</Link>
-                </li> */}
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+                <li>
+                  <Link to="/register">Register</Link>
+                </li>
                 <li>
                   <Link to="/addProduct">Add product</Link>
                 </li>
@@ -33,7 +36,10 @@ const HeaderTemplate = () => {
                   <Link to="/addNews">Add news</Link>
                 </li>
                 <li>
-                  <Link to="/login">LogIn</Link>
+                  <Link to="/myProducts">My Cart: 2</Link>
+                </li>
+                <li>
+                  <Link to="/logout">Logout</Link>
                 </li>
               </ul>
             </div>
