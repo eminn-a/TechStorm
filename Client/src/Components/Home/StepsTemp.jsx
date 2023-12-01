@@ -21,7 +21,7 @@ const StepsTemp = () => {
               <span className="numberstep">
                 <i className="fa fa-bolt" aria-hidden="true"></i>
               </span>
-              <h3 className="numbertext">Get start to build with us</h3>
+              <h3 className="numbertext">Get start your journey with us</h3>
               <p>
                 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
                 auctor. Nullam quis risus eget urna mollis ornare vel eu leo.

@@ -36,7 +36,7 @@ const HeaderTemplate = () => {
                   <Link to="/addNews">Add news</Link>
                 </li>
                 <li>
-                  <Link to="/myProducts">My Cart: 2</Link>
+                  <Link to="/checkOut">My Cart: 2</Link>
                 </li>
                 <li>
                   <Link to="/logout">Logout</Link>

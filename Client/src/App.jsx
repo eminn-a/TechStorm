@@ -8,6 +8,7 @@ import Product from "./Components/Product/Product";
 import Login from "./Components/Login/Login";
 import AddProduct from "./Components/AddProduct/AddProduct";
 import AddNews from "./Components/AddNews/AddNews";
+import CheckOut from "./Components/CheckOut/CheckOut";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/register" element={<Product />} />
         <Route path="/addProduct" element={<AddProduct />} />
         <Route path="/addNews" element={<AddNews />} />
+        <Route path="/checkOut" element={<CheckOut />} />
       </Routes>
       <FooterTemplate />
     </>
