@@ -6,7 +6,7 @@ const FeedBackTemp = () => {
           <div className="slide-text">
             <div>
               <h2>
-                <span className="uppercase">Awesome Support</span>
+                <span className="uppercase">About Us</span>
               </h2>
               <p>
                 The support... I can only say it's awesome. You make a product

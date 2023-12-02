@@ -12,7 +12,7 @@ const SingleItem = () => {
         <div className="container toparea">
           <div className="underlined-title">
             <div className="editContent">
-              <h1 className="text-center latestitems">Awesome Product(name)</h1>
+              <h1 className="text-center latestitems">ASUS TUF Gaming F15</h1>
             </div>
             <div className="wow-hr type_short">
               <span className="wow-hr-h">
@@ -34,9 +34,10 @@ const SingleItem = () => {
                 <br />
                 <div className="product-details text-left">
                   <p>
-                    Лаптоп ASUS TUF Gaming F15 FX507ZV4-HQ050, 15.6", WQHD,
-                    Intel Core i7-12700H (1.7/4.7GHz, 24M), NVIDIA RTX 4060 8GB
-                    GDDR6 DLSS 3, 16 GB, 1 TB SSD - 90NR0FA7-M007R0
+                    The Asus TUF F15 is equipped with an Intel Core i7
+                    processor, providing reliable performance and efficient
+                    multitasking capabilities for smooth gameplay and everyday
+                    computing tasks
                   </p>
                 </div>
               </div>
@@ -46,10 +47,13 @@ const SingleItem = () => {
                 onClick={() => console.log("buyed item!")}
                 className="btn btn-buynow"
               >
-                Purchase! - 88.88$
+                Purchase! - 1699.99$
               </button>
               <div className="properties-box">
                 <ul className="unstyle">
+                  <li>
+                    <b className="propertyname">Brand:</b> Asus
+                  </li>
                   <li>
                     <b className="propertyname">CPU:</b> Intel Core i7-12700H
                     (1.7/4.7GHz, 24M)
@@ -68,19 +72,10 @@ const SingleItem = () => {
                     <b className="propertyname">Display:</b> 15.6" WQHD IPS
                   </li>
                   <li>
-                    <b className="propertyname">Display Hz:</b> 165 Hz
-                  </li>
-                  <li>
                     <b className="propertyname">OS:</b> Windows 10
                   </li>
                   <li>
                     <b className="propertyname">Warranty:</b> 24 months
-                  </li>
-                  <li>
-                    <b className="propertyname">Live Demo:</b>
-                    <a target="_blank" href="http://www.wowthemes.net/">
-                      http://www.wowthemes.net/
-                    </a>
                   </li>
                 </ul>
               </div>

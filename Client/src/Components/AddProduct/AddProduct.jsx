@@ -26,26 +26,14 @@ const AddProduct = () => {
             </div>
             <form method="post" action="contact.php" id="contactform">
               <div className="form">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Product Name *"
-                />
-                <input
-                  type="text"
-                  name="model"
-                  placeholder="Your Product Model *"
-                />
-                <input
-                  type="text"
-                  name="password"
-                  placeholder="Your Product Price *"
-                />
-                <input
-                  type="text"
-                  name="re-password"
-                  placeholder="Your Product Type *"
-                />
+                <input type="text" name="Brand" placeholder="Brand *" />
+                <input type="text" name="CPU" placeholder="CPU *" />
+                <input type="text" name="GPU" placeholder="GPU *" />
+                <input type="text" name="RAM" placeholder="RAM *" />
+                <input type="text" name="Storage" placeholder="Storage *" />
+                <input type="text" name="Display" placeholder="Display *" />
+                <input type="text" name="OS" placeholder="OS *" />
+                <input type="text" name="Warranty" placeholder="Warranty *" />
                 <textarea
                   name="comment"
                   rows="7"
