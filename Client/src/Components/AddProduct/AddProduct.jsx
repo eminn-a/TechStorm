@@ -7,9 +7,7 @@ const AddProduct = () => {
 
   const createAddProductHandler = async (e) => {
     e.preventDefault();
-
     const productData = Object.fromEntries(new FormData(e.currentTarget));
-
     try {
       const result = await service.create(productData);
       console.log(result);

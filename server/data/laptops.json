@@ -1,15 +1,15 @@
 {
-    "3ac3ac21-2c01-4836-8549-eb98c0761592": {
-        "brand": "asus",
-        "cpu": "i7",
-        "gpu": "rtx3070",
-        "ram": "8gb",
-        "storage": "100gb",
-        "display": "16 inch",
-        "os": "windows 10",
-        "imgUrl": "https://ardes.bg/uploads/p/dell-latitude-5430-386924.jpg",
-        "price": "1965",
-        "description": "nice laptop for office",
-        "_id": "3ac3ac21-2c01-4836-8549-eb98c0761592"
+    "765347f7-779a-4ff4-87b5-411ce79ab512": {
+        "brand": "ASUS ROG Zephyrus Duo 16",
+        "cpu": "AMD Ryzen 9 7945HX (2.5/5.4GHz, 64M)",
+        "gpu": "NVIDIA RTX 4080 12 GB GDDR6 DLSS 3",
+        "ram": "32 GB DDR5 4800 MHz",
+        "storage": "1TB M.2 NVMe SSD",
+        "display": "16\" (40.64 см) WQXGA",
+        "os": "Windows 11",
+        "imgUrl": "https://ardes.bg/uploads/p/asus-gx650-rog-zephyrus-duo-16-382852.jpg",
+        "price": "7799",
+        "description": "Лаптоп ASUS ROG Zephyrus Duo 16 2023 GX650PZ-NM014X, 16.0\", WQXGA, AMD Ryzen 9 7945HX (2.5/5.4GHz, 64M), NVIDIA RTX 4080 12 GB GDDR6 DLSS 3, 32 GB, 1 TB SSD - 90NR0CF1-M000K0",
+        "_id": "765347f7-779a-4ff4-87b5-411ce79ab512"
     }
 }
