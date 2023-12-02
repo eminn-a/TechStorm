@@ -1,0 +1,15 @@
+{
+    "3ac3ac21-2c01-4836-8549-eb98c0761592": {
+        "brand": "asus",
+        "cpu": "i7",
+        "gpu": "rtx3070",
+        "ram": "8gb",
+        "storage": "100gb",
+        "display": "16 inch",
+        "os": "windows 10",
+        "imgUrl": "https://ardes.bg/uploads/p/dell-latitude-5430-386924.jpg",
+        "price": "1965",
+        "description": "nice laptop for office",
+        "_id": "3ac3ac21-2c01-4836-8549-eb98c0761592"
+    }
+}

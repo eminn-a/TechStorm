@@ -1,4 +1,24 @@
+import * as service from "../../services/service.js";
+
+import { useNavigate } from "react-router-dom";
+
 const AddProduct = () => {
+  const navigate = useNavigate();
+
+  const createAddProductHandler = async (e) => {
+    e.preventDefault();
+
+    const productData = Object.fromEntries(new FormData(e.currentTarget));
+
+    try {
+      const result = await service.create(productData);
+      console.log(result);
+      navigate("/shop");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <section className="item content">
       <div className="container toparea">
@@ -24,18 +44,20 @@ const AddProduct = () => {
                 You successfuly registered product!
               </div>
             </div>
-            <form method="post" action="contact.php" id="contactform">
+
+            <form id="contactform" onSubmit={createAddProductHandler}>
               <div className="form">
-                <input type="text" name="Brand" placeholder="Brand *" />
-                <input type="text" name="CPU" placeholder="CPU *" />
-                <input type="text" name="GPU" placeholder="GPU *" />
-                <input type="text" name="RAM" placeholder="RAM *" />
-                <input type="text" name="Storage" placeholder="Storage *" />
-                <input type="text" name="Display" placeholder="Display *" />
-                <input type="text" name="OS" placeholder="OS *" />
-                <input type="text" name="Warranty" placeholder="Warranty *" />
+                <input type="text" name="brand" placeholder="Brand *" />
+                <input type="text" name="cpu" placeholder="CPU *" />
+                <input type="text" name="gpu" placeholder="GPU *" />
+                <input type="text" name="ram" placeholder="RAM *" />
+                <input type="text" name="storage" placeholder="Storage *" />
+                <input type="text" name="display" placeholder="Display *" />
+                <input type="text" name="os" placeholder="OS *" />
+                <input type="text" name="imgUrl" placeholder="ImgUrl *" />
+                <input type="number" name="price" placeholder="Price *" />
                 <textarea
-                  name="comment"
+                  name="description"
                   rows="7"
                   placeholder="Description *"
                 ></textarea>
