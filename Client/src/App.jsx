@@ -18,7 +18,7 @@ import Register from "./Components/Register/Register";
 
 function App() {
   const navigate = useNavigate();
-  const [auth, setAuth] = useState();
+  const [auth, setAuth] = useState({});
 
   const loginSubmitHandler = async (values) => {
     try {
@@ -31,15 +31,21 @@ function App() {
   };
 
   const registerSbmitHandler = async (values) => {
-    console.log(values);
+    const result = await authService.register(
+      values.email,
+      values.username,
+      values.password
+    );
+    setAuth(result);
+    navigate(Path.Home);
   };
-
+  console.log(auth);
   const values = {
     loginSubmitHandler,
     registerSbmitHandler,
-    // username: auth.username,
-    // emial: auth.email,
-    // isAuthenticated: !!auth.email,
+    username: auth.username || auth.email,
+    emial: auth.email,
+    isAuthenticated: !!auth.email,
   };
 
   return (

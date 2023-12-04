@@ -30,7 +30,9 @@ const HeaderTemplate = () => {
 
                 {isAuthenticated && (
                   <>
-                    <span>{username}</span>
+                    <span>
+                      <i>{username}</i>
+                    </span>
                     <li>
                       <Link to="/addProduct">Add product</Link>
                     </li>
