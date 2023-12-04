@@ -1,12 +1,15 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
+import AuthContext from "../../contexts/authContext";
 
 const LoginFormKeys = {
   email: "email",
   password: "password",
 };
 
-const Login = ({ loginSubmitHandler }) => {
+const Login = () => {
+  const { loginSubmitHandler } = useContext(AuthContext);
+
   const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
     [LoginFormKeys.email]: "",
     [LoginFormKeys.password]: "",
@@ -57,7 +60,7 @@ const Login = ({ loginSubmitHandler }) => {
             <form id="contactform" onSubmit={onSubmit}>
               <div className="form">
                 <input
-                  type="text"
+                  type="email"
                   name={LoginFormKeys.email}
                   placeholder="Your E-mail Address *"
                   onChange={onChange}
@@ -68,7 +71,7 @@ const Login = ({ loginSubmitHandler }) => {
                   name={LoginFormKeys.password}
                   placeholder="Your Password *"
                   onChange={onChange}
-                  value={values[LoginFormKeys.email]}
+                  value={values[LoginFormKeys.password]}
                 />
 
                 <input
