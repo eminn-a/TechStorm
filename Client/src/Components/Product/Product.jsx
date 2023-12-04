@@ -9,12 +9,10 @@ import * as service from "../../services/service.js";
 const Product = () => {
   const [product, setPorduct] = useState();
   const { productId } = useParams();
-  console.log(productId);
 
   useEffect(() => {
     service.getById(productId).then((result) => setPorduct(result));
   }, []);
-  console.log(product);
 
   useEffect(() => {
     //  scroll to top on page load

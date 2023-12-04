@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 import HeaderTemplate from "./Components/Header/Header";
 import FooterTemplate from "./Components/Footer/Footer";
@@ -12,6 +13,12 @@ import CheckOut from "./Components/CheckOut/CheckOut";
 import Register from "./Components/Register/Register";
 
 function App() {
+  const [auth, setAuth] = useState();
+
+  const loginSubmitHandler = (values) => {
+    console.log(values);
+  };
+
   return (
     <>
       <HeaderTemplate />
@@ -19,7 +26,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/products/:productId" element={<Product />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login loginSubmitHandler={loginSubmitHandler} />}
+        />
         <Route path="/register" element={<Register />} />
         <Route path="/addProduct" element={<AddProduct />} />
         <Route path="/addNews" element={<AddNews />} />
