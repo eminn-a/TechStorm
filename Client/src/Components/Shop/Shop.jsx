@@ -1,16 +1,20 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import * as service from "../../services/service.js";
+import * as productService from "../../services/productService.js";
 import ShopItem from "./Shop-item/ShopItem.jsx";
 
 const Shop = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+  scrollToTop();
+
   const [products, setProducts] = useState([]);
-
-  window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
-
   useEffect(() => {
-    service.getAll().then((result) => setProducts(Object.values(result)));
+    productService
+      .getAll()
+      .then((result) => setProducts(Object.values(result)));
   }, []);
 
   return (

@@ -1,4 +1,4 @@
-// import { clearUserData, getAccessToken } from "../util.js";
+import { clearUserData, getAccessToken } from "../utils.js";
 
 const host = "http://localhost:3030";
 
@@ -8,10 +8,10 @@ async function request(method, url, data) {
     headers: {},
   };
 
-  // const token = getAccessToken();
-  // if (token) {
-  //   option.headers["X-Authorization"] = token;
-  // }
+  const token = getAccessToken();
+  if (token) {
+    option.headers["X-Authorization"] = token;
+  }
   if (data) {
     option.headers["Content-Type"] = "application/json";
     option.body = JSON.stringify(data);
@@ -22,7 +22,7 @@ async function request(method, url, data) {
 
     if (response.ok != true) {
       if (response.status == 403) {
-        // clearUserData();
+        clearUserData();
       }
       const error = await response.json();
       throw new Error(error.message);

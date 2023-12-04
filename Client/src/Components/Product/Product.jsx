@@ -4,14 +4,14 @@ import SingleItem from "./SingleItem";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import * as service from "../../services/service.js";
+import * as productService from "../../services/productService.js";
 
 const Product = () => {
   const [product, setPorduct] = useState();
   const { productId } = useParams();
 
   useEffect(() => {
-    service.getById(productId).then((result) => setPorduct(result));
+    productService.getById(productId).then((result) => setPorduct(result));
   }, []);
 
   useEffect(() => {

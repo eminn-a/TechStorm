@@ -1,15 +1,16 @@
-import * as service from "../../services/service.js";
+import * as productService from "../../services/productService.js";
 
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
+  window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   const navigate = useNavigate();
 
   const createAddProductHandler = async (e) => {
     e.preventDefault();
     const productData = Object.fromEntries(new FormData(e.currentTarget));
     try {
-      const result = await service.create(productData);
+      const result = await productService.create(productData);
       console.log(result);
       navigate("/shop");
     } catch (err) {
