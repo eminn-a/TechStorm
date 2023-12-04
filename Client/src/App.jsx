@@ -30,14 +30,26 @@ function App() {
     }
   };
 
+  const registerSbmitHandler = async (values) => {
+    console.log(values);
+  };
+
+  const values = {
+    loginSubmitHandler,
+    registerSbmitHandler,
+    // username: auth.username,
+    // emial: auth.email,
+    // isAuthenticated: !!auth.email,
+  };
+
   return (
     <>
-      <AuthContext.Provider value={{ loginSubmitHandler }}>
+      <AuthContext.Provider value={values}>
         <HeaderTemplate />
         <Routes>
           <Route path={Path.Home} element={<Home />} />
           <Route path={Path.Shop} element={<Shop />} />
-          <Route path="/products/:productId" element={<Product />} />
+          <Route path={Path.Details} element={<Product />} />
           <Route path={Path.Login} element={<Login />} />
           <Route path={Path.Register} element={<Register />} />
           <Route path={Path.AddProduct} element={<AddProduct />} />

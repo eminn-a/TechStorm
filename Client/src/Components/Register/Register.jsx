@@ -1,6 +1,23 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import AuthContext from "../../contexts/authContext";
+import { useForm } from "../../hooks/useForm";
+import { register } from "../../services/authSrvice";
+
+const registerFormKeys = {
+  Email: "email",
+  Username: "username",
+  Password: "password",
+  RePassword: "repassword",
+};
 
 const Register = () => {
+  const { registerSbmitHandler } = useContext(AuthContext);
+  const { values, onChange, onSubmit } = useForm(registerSbmitHandler, {
+    [registerFormKeys.Email]: "",
+    [registerFormKeys.Password]: "",
+    [registerFormKeys.RePassword]: "",
+  });
+
   useEffect(() => {
     //  scroll to top on page load
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
@@ -39,23 +56,35 @@ const Register = () => {
                 You registered successfuly. Thank you!
               </div>
             </div>
-            <form method="post" id="contactform">
+            <form id="contactform" onSubmit={onSubmit}>
               <div className="form">
-                <input type="text" name="name" placeholder="Your Name *" />
                 <input
                   type="text"
-                  name="email"
+                  name={registerFormKeys.Username}
+                  placeholder="Your Name *"
+                  onChange={onChange}
+                  value={values[registerFormKeys.Username]}
+                />
+                <input
+                  type="email"
+                  name={registerFormKeys.Email}
                   placeholder="Your E-mail Address *"
+                  onChange={onChange}
+                  value={values[registerFormKeys.Email]}
                 />
                 <input
                   type="password"
-                  name="password"
+                  name={registerFormKeys.Password}
                   placeholder="Your Password *"
+                  onChange={onChange}
+                  value={values[registerFormKeys.Password]}
                 />
                 <input
                   type="password"
-                  name="re-password"
+                  name={registerFormKeys.RePassword}
                   placeholder="Repeat your Password *"
+                  onChange={onChange}
+                  value={values[registerFormKeys.RePassword]}
                 />
                 <input
                   type="submit"

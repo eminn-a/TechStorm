@@ -5,5 +5,6 @@ const Path = {
   Register: "/register",
   AddProduct: "/addProduct",
   AddNews: "/addNews",
+  Details: "/products/:productId",
 };
 export default Path;

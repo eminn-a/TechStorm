@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import AuthContext from "../../contexts/authContext";
 
 const HeaderTemplate = () => {
+  const { username, isAuthenticated } = useContext(AuthContext);
+
   return (
     <header className="item header margin-top-0">
       <div className="wrapper">
@@ -23,24 +27,34 @@ const HeaderTemplate = () => {
                 <li>
                   <Link to="/shop">Shop</Link>
                 </li>
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
-                <li>
-                  <Link to="/register">Register</Link>
-                </li>
-                <li>
-                  <Link to="/addProduct">Add product</Link>
-                </li>
-                <li>
-                  <Link to="/addNews">Add news</Link>
-                </li>
-                <li>
-                  <Link to="/checkOut">My Cart: 2</Link>
-                </li>
-                <li>
-                  <Link to="/logout">Logout</Link>
-                </li>
+
+                {isAuthenticated && (
+                  <>
+                    <span>{username}</span>
+                    <li>
+                      <Link to="/addProduct">Add product</Link>
+                    </li>
+                    <li>
+                      <Link to="/addNews">Add news</Link>
+                    </li>
+                    <li>
+                      <Link to="/checkOut">My Cart: 2</Link>
+                    </li>
+                    <li>
+                      <Link to="/logout">Logout</Link>
+                    </li>
+                  </>
+                )}
+                {!isAuthenticated && (
+                  <>
+                    <li>
+                      <Link to="/login">Login</Link>
+                    </li>
+                    <li>
+                      <Link to="/register">Register</Link>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>
