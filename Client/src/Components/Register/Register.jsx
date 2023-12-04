@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const Login = () => {
+const Register = () => {
   useEffect(() => {
     //  scroll to top on page load
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
@@ -11,7 +11,7 @@ const Login = () => {
       <div className="container toparea">
         <div className="underlined-title">
           <div className="editContent">
-            <h1 className="text-center latestitems">Login</h1>
+            <h1 className="text-center latestitems">Register</h1>
           </div>
           <div className="wow-hr type_short">
             <span className="wow-hr-h">
@@ -41,6 +41,7 @@ const Login = () => {
             </div>
             <form method="post" id="contactform">
               <div className="form">
+                <input type="text" name="name" placeholder="Your Name *" />
                 <input
                   type="text"
                   name="email"
@@ -51,12 +52,16 @@ const Login = () => {
                   name="password"
                   placeholder="Your Password *"
                 />
-
+                <input
+                  type="password"
+                  name="re-password"
+                  placeholder="Repeat your Password *"
+                />
                 <input
                   type="submit"
                   id="submit"
                   className="clearfix btn"
-                  value="Login"
+                  value="Register"
                 />
               </div>
             </form>
@@ -67,4 +72,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

@@ -9,6 +9,7 @@ import Login from "./Components/Login/Login";
 import AddProduct from "./Components/AddProduct/AddProduct";
 import AddNews from "./Components/AddNews/AddNews";
 import CheckOut from "./Components/CheckOut/CheckOut";
+import Register from "./Components/Register/Register";
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/products/:productId" element={<Product />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Product />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/addProduct" element={<AddProduct />} />
         <Route path="/addNews" element={<AddNews />} />
         <Route path="/checkOut" element={<CheckOut />} />

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function ShopItem({ cpu, gpu, brand, imgUrl, price }) {
+export default function ShopItem({ _id, cpu, gpu, ram, brand, imgUrl, price }) {
   return (
     <div className="col-md-4">
       <div className="productbox">
@@ -10,15 +10,16 @@ export default function ShopItem({ cpu, gpu, brand, imgUrl, price }) {
           </span>
         </div>
         <div className="product-details">
-          <Link to="/product">
+          <Link to={`/products/${_id}`}>
             <h1>{brand}</h1>
           </Link>
           <div>
-            <h6>{gpu}</h6>
             <h6>{cpu}</h6>
+            <h6>{gpu}</h6>
+            <h6>RAM: {ram}</h6>
             <h4>Price: ${price}</h4>
           </div>
-          <Link to="/product/">
+          <Link to={`/products/${_id}`}>
             <button className="detailsButton">Details</button>
           </Link>
           <button className="detailsButton">Buy</button>

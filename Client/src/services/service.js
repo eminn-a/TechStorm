@@ -5,7 +5,7 @@ const endpoints = {
   // all: "/data/laptops?sortBy=_createdOn%20des",
   all: "/jsonstore/laptops",
   create: "/jsonstore/laptops",
-  byId: "/data/laptops/",
+  byId: "/jsonstore/laptops/",
   deleteById: "/data/laptops/",
   update: "/data/laptops/",
 };
