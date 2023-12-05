@@ -19,7 +19,7 @@ export async function register(email, username, password) {
   return user;
 }
 
-export function logout() {
-  api.get(endpoint.logout);
+export async function logout() {
+  await api.get(endpoint.logout);
   clearUserData();
 }

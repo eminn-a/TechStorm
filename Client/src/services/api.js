@@ -9,6 +9,7 @@ async function request(method, url, data) {
   };
 
   const token = getAccessToken();
+  console.log(token);
   if (token) {
     option.headers["X-Authorization"] = token;
   }
