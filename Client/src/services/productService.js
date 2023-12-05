@@ -2,8 +2,7 @@ import * as api from "./api.js";
 
 const endpoints = {
   recent: "/data/laptops?sortBy=_createdOn%20desc&distinct=category",
-  // all: "/data/laptops?sortBy=_createdOn%20des",
-  all: "/data/laptops",
+  all: "/data/laptops?sortBy=_createdOn%20des",
   create: "/data/laptops",
   byId: "/data/laptops/",
   deleteById: "/data/laptops/",

@@ -23,7 +23,7 @@ const Page404 = () => {
         here.
       </p>
 
-      <button class="button-74" role="button">
+      <button className="button-74" role="button">
         <Link to={Path.Home}>Go Home</Link>
       </button>
     </div>
