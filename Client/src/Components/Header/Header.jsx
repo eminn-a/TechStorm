@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../contexts/authContext";
 
 const HeaderTemplate = () => {
-  const { username, isAuthenticated } = useContext(AuthContext);
+  const { username, isAuthenticated, isAdmin } = useContext(AuthContext);
 
   return (
     <header className="item header margin-top-0">
@@ -33,12 +33,16 @@ const HeaderTemplate = () => {
                     <span>
                       <i>{username}</i>
                     </span>
-                    <li>
-                      <Link to="/addProduct">Add product</Link>
-                    </li>
-                    <li>
-                      <Link to="/addNews">Add news</Link>
-                    </li>
+                    {isAdmin && (
+                      <>
+                        <li>
+                          <Link to="/addProduct">Add product</Link>
+                        </li>
+                        <li>
+                          <Link to="/addNews">Add news</Link>
+                        </li>
+                      </>
+                    )}
                     <li>
                       <Link to="/checkOut">My Cart: 2</Link>
                     </li>

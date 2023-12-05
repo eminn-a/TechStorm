@@ -1,9 +1,6 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import * as authService from "./services/authSrvice.js";
 import Path from "./paths.js";
-import { clearUserData } from "./utils.js";
 import { AuthProvider } from "./contexts/authContext.jsx";
 
 import HeaderTemplate from "./Components/Header/Header";
@@ -20,49 +17,9 @@ import Logout from "./Components/Logout/Logout.jsx";
 import Page404 from "./Components/Page404/Page404.jsx";
 
 function App() {
-  const [auth, setAuth] = useState(() => {
-    clearUserData();
-    return {};
-  });
-  const navigate = useNavigate();
-
-  const loginSubmitHandler = async (values) => {
-    try {
-      const result = await authService.login(values.email, values.password);
-      setAuth(result);
-      navigate(Path.Home);
-    } catch (err) {
-      console.log(err.message);
-    }
-  };
-
-  const registerSbmitHandler = async (values) => {
-    const result = await authService.register(
-      values.email,
-      values.username,
-      values.password
-    );
-    setAuth(result);
-    navigate(Path.Home);
-  };
-
-  const logoutHandler = () => {
-    setAuth({});
-    navigate(Path.Home);
-  };
-
-  const values = {
-    loginSubmitHandler,
-    registerSbmitHandler,
-    logoutHandler,
-    username: auth.username || auth.email,
-    emial: auth.email,
-    isAuthenticated: !!auth.email,
-  };
-
   return (
     <>
-      <AuthProvider value={values}>
+      <AuthProvider>
         <HeaderTemplate />
         <Routes>
           <Route path={Path.Home} element={<Home />} />

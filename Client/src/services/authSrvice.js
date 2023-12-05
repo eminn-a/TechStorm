@@ -9,7 +9,7 @@ const endpoint = {
 
 export async function login(email, password) {
   const user = await api.post(endpoint.login, { email, password });
-  setUserData(user);
+  // setUserData(user);
   return user;
 }
 
