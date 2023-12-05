@@ -24,7 +24,6 @@ function App() {
   const loginSubmitHandler = async (values) => {
     try {
       const result = await authService.login(values.email, values.password);
-      console.log(result);
       setAuth(result);
       navigate(Path.Home);
     } catch (err) {
@@ -38,7 +37,6 @@ function App() {
       values.username,
       values.password
     );
-    console.log(result);
     setAuth(result);
     navigate(Path.Home);
   };
