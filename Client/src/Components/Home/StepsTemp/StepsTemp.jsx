@@ -10,9 +10,8 @@ const StepsTemp = () => {
               </span>
               <h3 className="numbertext">Choose our Products</h3>
               <p>
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-                auctor. Nullam quis risus eget urna mollis ornare vel eu leo.
-                Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                You can choose from a wide range of fastest gaming laptops and
+                best office laptops from our shop at best price
               </p>
             </div>
           </div>
@@ -21,11 +20,11 @@ const StepsTemp = () => {
               <span className="numberstep">
                 <i className="fa fa-bolt" aria-hidden="true"></i>
               </span>
-              <h3 className="numbertext">Get start your journey with us</h3>
+              <h3 className="numbertext">Start your journey with us</h3>
               <p>
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-                auctor. Nullam quis risus eget urna mollis ornare vel eu leo.
-                Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                Play and create your best game with our laptops, featuring with
+                latest 13th Gen processors and latest graphic cards or work with
+                our best performance and quietest office laptops
               </p>
             </div>
           </div>
@@ -36,9 +35,9 @@ const StepsTemp = () => {
               </span>
               <h3 className="numbertext">Pay with PayPal or Card</h3>
               <p>
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-                auctor. Nullam quis risus eget urna mollis ornare vel eu leo.
-                Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                Pay for your new laptop over time, interest‑free with PayPal.
+                Simply choose to check out with PayPal as your payment option
+                when you make your purchase. And enjoy 3% Daily Cash back.
               </p>
             </div>
           </div>

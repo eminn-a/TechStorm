@@ -11,7 +11,6 @@ const AddProduct = () => {
     const productData = Object.fromEntries(new FormData(e.currentTarget));
     try {
       const result = await productService.create(productData);
-      console.log(result);
       navigate("/shop");
     } catch (err) {
       console.log(err);

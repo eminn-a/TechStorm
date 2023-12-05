@@ -1,8 +1,8 @@
-import FeedBackTemp from "./Feedback";
-import LatestItems from "./LatestItems";
-import LatestNewsTemp from "./LatestNew";
-import ShopButtonTemp from "./ShopButton";
-import StepsTemp from "./StepsTemp";
+import AboutUs from "./AboutUs/AboutUs";
+import LatestItems from "./LatestItems/LatestItems";
+import LatestNewsTemp from "./LatestNew/LatestNew";
+import ShopButtonTemp from "./ShopBtn/ShopButton";
+import StepsTemp from "./StepsTemp/StepsTemp";
 
 import { useEffect } from "react";
 
@@ -18,7 +18,7 @@ const Home = () => {
       <LatestItems />
       <ShopButtonTemp />
       <LatestNewsTemp />
-      <FeedBackTemp />
+      <AboutUs />
     </>
   );
 };

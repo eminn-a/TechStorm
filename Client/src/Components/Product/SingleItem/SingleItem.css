@@ -54,7 +54,7 @@
 
 .dellBtn {
   appearance: none;
-  background-color: #a42e2e;
+  background-color: #A14D48;
   border: 1px solid rgba(27, 31, 35, .15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -83,7 +83,7 @@
 }
 
 .dellBtn:hover {
-  background-color: #a42e2e;
+  background-color: #ad3d3d;
 }
 
 .dellBtn:focus {
@@ -107,7 +107,7 @@
 
 .edittBtn {
   appearance: none;
-  background-color: #2ea44f;
+  background-color: #48A14D;
   border: 1px solid rgba(27, 31, 35, .15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -136,23 +136,23 @@
 }
 
 .edittBtn:hover {
-  background-color: #2c974b;
+  background-color: #498e5b;
 }
 
 .edittBtn:focus {
-  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  box-shadow: rgba(196, 196, 196, 0.4) 0 0 0 3px;
   outline: none;
 }
 
 .edittBtn:disabled {
-  background-color: #94d3a2;
+  background-color: #095409;
   border-color: rgba(27, 31, 35, .1);
   color: rgba(255, 255, 255, .8);
   cursor: default;
 }
 
 .edittBtn:active {
-  background-color: #298e46;
+  background-color: #0f6529;
   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
@@ -219,3 +219,4 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+

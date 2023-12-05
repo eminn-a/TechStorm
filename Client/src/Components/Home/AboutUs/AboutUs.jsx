@@ -9,10 +9,10 @@ const FeedBackTemp = () => {
                 <span className="uppercase">About Us</span>
               </h2>
               <p>
-                The support... I can only say it's awesome. You make a product
-                and you help people out any way you can even if it means that
-                you have to log in on their dashboard to sort out any problems
-                that customer might have. Simply Outstanding!
+                TechStorm provides a wide range of products in different
+                categories, comfortable shopping, professional consultation and
+                a variety of services to meet the needs and improve the life of
+                each and every client
               </p>
               <i className="fa fa-star"></i>
               <i className="fa fa-star"></i>
