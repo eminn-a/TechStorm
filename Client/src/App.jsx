@@ -2,9 +2,9 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import * as authService from "./services/authSrvice.js";
-import AuthContext from "./contexts/authContext";
 import Path from "./paths.js";
 import { clearUserData } from "./utils.js";
+import { AuthProvider } from "./contexts/authContext.jsx";
 
 import HeaderTemplate from "./Components/Header/Header";
 import FooterTemplate from "./Components/Footer/Footer";
@@ -62,7 +62,7 @@ function App() {
 
   return (
     <>
-      <AuthContext.Provider value={values}>
+      <AuthProvider value={values}>
         <HeaderTemplate />
         <Routes>
           <Route path={Path.Home} element={<Home />} />
@@ -77,7 +77,7 @@ function App() {
           <Route path="*" element={<Page404 />} />
         </Routes>
         <FooterTemplate />
-      </AuthContext.Provider>
+      </AuthProvider>
     </>
   );
 }
