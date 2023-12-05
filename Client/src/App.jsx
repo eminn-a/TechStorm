@@ -4,6 +4,7 @@ import { useState } from "react";
 import * as authService from "./services/authSrvice.js";
 import AuthContext from "./contexts/authContext";
 import Path from "./paths.js";
+import { clearUserData } from "./utils.js";
 
 import HeaderTemplate from "./Components/Header/Header";
 import FooterTemplate from "./Components/Footer/Footer";
@@ -16,9 +17,13 @@ import AddNews from "./Components/AddNews/AddNews";
 import CheckOut from "./Components/CheckOut/CheckOut";
 import Register from "./Components/Register/Register";
 import Logout from "./Components/Logout/Logout.jsx";
+import Page404 from "./Components/Page404/Page404.jsx";
 
 function App() {
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState(() => {
+    clearUserData();
+    return {};
+  });
   const navigate = useNavigate();
 
   const loginSubmitHandler = async (values) => {
@@ -69,6 +74,7 @@ function App() {
           <Route path={Path.AddProduct} element={<AddProduct />} />
           <Route path={Path.AddNews} element={<AddNews />} />
           <Route path="/checkOut" element={<CheckOut />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
         <FooterTemplate />
       </AuthContext.Provider>
