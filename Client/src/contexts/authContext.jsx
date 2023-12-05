@@ -37,7 +37,9 @@ export const AuthProvider = ({ children }) => {
     setAuth({});
     navigate(Path.Home);
   };
+
   const adminId = "60f0cf0b-34b0-4abd-9769-8c42f830dffc";
+
   const values = {
     loginSubmitHandler,
     registerSbmitHandler,
