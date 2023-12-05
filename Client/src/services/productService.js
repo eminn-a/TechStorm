@@ -3,9 +3,9 @@ import * as api from "./api.js";
 const endpoints = {
   recent: "/data/laptops?sortBy=_createdOn%20desc&distinct=category",
   // all: "/data/laptops?sortBy=_createdOn%20des",
-  all: "/jsonstore/laptops",
-  create: "/jsonstore/laptops",
-  byId: "/jsonstore/laptops/",
+  all: "/data/laptops",
+  create: "/data/laptops",
+  byId: "/data/laptops/",
   deleteById: "/data/laptops/",
   update: "/data/laptops/",
 };

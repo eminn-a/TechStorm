@@ -1,5 +1,5 @@
-import AlsoLike from "./AlsoLike";
-import SingleItem from "./SingleItem";
+import AlsoLike from "./AlsoLike/AlsoLike.jsx";
+import SingleItem from "./SingleItem/SingleItem.jsx";
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+import "./SingleItem.css";
+
 const SingleItem = ({
   brand,
   cpu,
@@ -51,7 +53,16 @@ const SingleItem = ({
               >
                 Purchase! - {price}$
               </button>
+              <button className="edittBtn" role="button">
+                edit
+              </button>
+              <button className="dellBtn">delete</button>
               <div className="properties-box">
+                <button className="button-47" role="button">
+                  <span className="fa fa-star-o fa-2x"> Add star</span>
+                </button>
+                <br />
+                <p>Total stars:0</p>
                 <ul className="unstyle">
                   <li>
                     <b className="propertyname">Brand:</b> {brand}

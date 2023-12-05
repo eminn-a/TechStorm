@@ -37,6 +37,14 @@ const Shop = () => {
             {products.map((products) => (
               <ShopItem key={products._id} {...products} />
             ))}
+
+            {products.length === 0 && (
+              <>
+                <h1 className="text-center">There is no products</h1>
+                <br />
+                <br />
+              </>
+            )}
           </div>
         </div>
       </section>
