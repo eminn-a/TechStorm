@@ -32,16 +32,11 @@ function App() {
             <Route path={Path.Details} element={<Product />} />
             <Route path={Path.Login} element={<Login />} />
             <Route path={Path.Register} element={<Register />} />
-            {/* <Route path={Path.Logout} element={<Logout />} /> */}
-            {/* <Route path={Path.AddProduct} element={<AddProduct />} /> */}
-            {/* <Route path={Path.AddNews} element={<AddNews />} /> */}
-            {/* <Route path={Path.Edit} element={<EditProduct />} /> */}
-            {/* <Route path="/checkOut" element={<CheckOut />} /> */}
             <Route path="*" element={<Page404 />} />
 
             <Route element={<AuthGuard />}>
               <Route path={Path.Logout} element={<Logout />} />
-              <Route path="/checkOut" element={<CheckOut />} />
+              <Route path={Path.CheckOut} element={<CheckOut />} />
               <Route element={<AdminGuard />}>
                 <Route path={Path.Edit} element={<EditProduct />} />
                 <Route path={Path.AddProduct} element={<AddProduct />} />

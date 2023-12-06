@@ -1,8 +1,11 @@
 import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-import "./SingleItem.css";
+import "./Style.css";
+
 import AuthContext from "../../../contexts/authContext";
+import Path from "../../../paths.js";
+import * as productService from "../../../services/productService.js";
 
 const SingleItem = ({
   brand,
@@ -20,6 +23,36 @@ const SingleItem = ({
 }) => {
   const { userId } = useContext(AuthContext);
   const isOwner = userId === _ownerId;
+  const navigate = useNavigate();
+
+  const onBuyClick = () => {
+    if (!userId) {
+      navigate(Path.Login);
+      return;
+    }
+    return console.log("buyed item");
+  };
+
+  const onAddStarClick = () => {
+    if (!userId) {
+      navigate("/login");
+      return;
+    }
+    return console.log("added star");
+  };
+
+  const onDeleteClick = () => {
+    const check = confirm(`You want to delete this item: ${brand}`);
+
+    if (check) {
+      productService.deleteById(_id);
+      navigate(Path.Shop);
+    }
+
+    console.log(`${_id}`);
+    console.log(check);
+  };
+
   useEffect(() => {
     //  scroll to top on page load
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
@@ -41,6 +74,16 @@ const SingleItem = ({
               </span>
             </div>
           </div>
+
+          <div className="done">
+            <div className="alert alert-success">
+              <button type="button" className="close" data-dismiss="alert">
+                ×
+              </button>
+              You purchased successfully. Thank you!
+            </div>
+          </div>
+
           <div className="row">
             <div className="col-md-8">
               <div className="productbox">
@@ -53,27 +96,27 @@ const SingleItem = ({
               </div>
             </div>
             <div className="col-md-4">
-              <button
-                onClick={() => console.log("buyed item!")}
-                className="btn btn-buynow"
-              >
-                Purchase! - {price}$
+              <button onClick={onBuyClick} className="btn btn-buynow">
+                Purchase - {price}$
               </button>
+
               {isOwner && (
                 <>
                   <Link to={`/products/${_id}/edit`}>
                     <button className="edittBtn">edit</button>
                   </Link>
-                  <Link>
-                    <button className="dellBtn">delete</button>
-                  </Link>
+
+                  <button onClick={onDeleteClick} className="dellBtn">
+                    delete
+                  </button>
                 </>
               )}
 
               <div className="properties-box">
-                <button className="button-47">
+                <button onClick={onAddStarClick} className="button-47">
                   <span className="fa fa-star-o fa-2x"> Add star</span>
                 </button>
+
                 <br />
                 <p>Total stars:0</p>
                 <ul className="unstyle">

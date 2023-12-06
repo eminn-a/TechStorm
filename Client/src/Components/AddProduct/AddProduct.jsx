@@ -35,14 +35,13 @@ const AddProduct = () => {
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2">
             <div className="done">
-              <div className="alert alert-success">
+              <div className="alert alert-danger">
                 <button type="button" className="close" data-dismiss="alert">
                   ×
                 </button>
-                You successfuly registered product!
+                All fields are required!
               </div>
             </div>
-
             <form id="contactform" onSubmit={createAddProductHandler}>
               <div className="form">
                 <input type="text" name="brand" placeholder="Brand *" />

@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import AuthContext from "../../contexts/authContext";
 
 const CheckOut = () => {
+  const { username } = useContext(AuthContext);
+
   useEffect(() => {
     //  scroll to top on page load
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
@@ -12,7 +15,7 @@ const CheckOut = () => {
       <div className="container toparea">
         <div className="underlined-title">
           <div className="editContent">
-            <h1 className="text-center latestitems">Emin's Cart</h1>
+            <h1 className="text-center latestitems">{username}'s Cart</h1>
           </div>
           <div className="wow-hr type_short">
             <span className="wow-hr-h">

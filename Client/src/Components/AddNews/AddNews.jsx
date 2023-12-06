@@ -17,11 +17,11 @@ const AddNews = () => {
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2">
             <div className="done">
-              <div className="alert alert-success">
+              <div className="alert alert-danger">
                 <button type="button" className="close" data-dismiss="alert">
                   ×
                 </button>
-                Your News Added!
+                All fields are required!
               </div>
             </div>
             <form method="post" action="contact.php" id="contactform">

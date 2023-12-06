@@ -47,15 +47,6 @@ const Login = () => {
               </div>
             </div>
             {/* --------- */}
-            <div className="done">
-              <div className="alert alert-success">
-                <button type="button" className="close" data-dismiss="alert">
-                  ×
-                </button>
-                You registered successfuly. Thank you!
-              </div>
-            </div>
-            {/* --------- */}
 
             <form id="contactform" onSubmit={onSubmit}>
               <div className="form">
