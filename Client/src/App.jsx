@@ -7,7 +7,7 @@ import HeaderTemplate from "./Components/Header/Header";
 import FooterTemplate from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import Shop from "./Components/Shop/Shop";
-import Product from "./Components/Product/Product";
+import Product from "./Components/Product/ProductDetails.jsx";
 import Login from "./Components/Login/Login";
 import AddProduct from "./Components/AddProduct/AddProduct";
 import AddNews from "./Components/AddNews/AddNews";
@@ -15,6 +15,7 @@ import CheckOut from "./Components/CheckOut/CheckOut";
 import Register from "./Components/Register/Register";
 import Logout from "./Components/Logout/Logout.jsx";
 import Page404 from "./Components/Page404/Page404.jsx";
+import EditProduct from "./Components/EditProduct/EditProduct.jsx";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path={Path.Register} element={<Register />} />
           <Route path={Path.AddProduct} element={<AddProduct />} />
           <Route path={Path.AddNews} element={<AddNews />} />
+          <Route path={Path.Edit} element={<EditProduct />} />
           <Route path="/checkOut" element={<CheckOut />} />
           <Route path="*" element={<Page404 />} />
         </Routes>

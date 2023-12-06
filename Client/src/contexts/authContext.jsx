@@ -46,6 +46,7 @@ export const AuthProvider = ({ children }) => {
     logoutHandler,
     username: auth.username || auth.email,
     emial: auth.email,
+    userId: auth._id,
     isAuthenticated: !!auth.email,
     isAdmin: auth._id === adminId,
   };

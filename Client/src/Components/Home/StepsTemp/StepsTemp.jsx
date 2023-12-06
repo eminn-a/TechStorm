@@ -10,8 +10,9 @@ const StepsTemp = () => {
               </span>
               <h3 className="numbertext">Choose our Products</h3>
               <p>
-                You can choose from a wide range of fastest gaming laptops and
-                best office laptops from our shop at best price
+                Pick your dreaming laptop from a wide range of high performance
+                gaming laptops and best office laptops from our shop at best
+                price.
               </p>
             </div>
           </div>
@@ -23,8 +24,8 @@ const StepsTemp = () => {
               <h3 className="numbertext">Start your journey with us</h3>
               <p>
                 Play and create your best game with our laptops, featuring with
-                latest 13th Gen processors and latest graphic cards or work with
-                our best performance and quietest office laptops
+                latest processors and latest graphic cards or work with our best
+                business laptops from every major manufacturer.
               </p>
             </div>
           </div>
@@ -37,7 +38,7 @@ const StepsTemp = () => {
               <p>
                 Pay for your new laptop over time, interest‑free with PayPal.
                 Simply choose to check out with PayPal as your payment option
-                when you make your purchase. And enjoy 3% Daily Cash back.
+                when you make your purchase.
               </p>
             </div>
           </div>

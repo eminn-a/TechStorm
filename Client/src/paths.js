@@ -7,5 +7,6 @@ const Path = {
   AddNews: "/addNews",
   Details: "/products/:productId",
   Logout: "/logout",
+  Edit: "/products/:productId/edit",
 };
 export default Path;

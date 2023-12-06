@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./SingleItem.css";
+import AuthContext from "../../../contexts/authContext";
 
 const SingleItem = ({
   brand,
@@ -13,7 +15,11 @@ const SingleItem = ({
   storage,
   imgUrl,
   description,
+  _ownerId,
+  _id,
 }) => {
+  const { userId } = useContext(AuthContext);
+  const isOwner = userId === _ownerId;
   useEffect(() => {
     //  scroll to top on page load
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
@@ -53,12 +59,19 @@ const SingleItem = ({
               >
                 Purchase! - {price}$
               </button>
-              <button className="edittBtn" role="button">
-                edit
-              </button>
-              <button className="dellBtn">delete</button>
+              {isOwner && (
+                <>
+                  <Link to={`/products/${_id}/edit`}>
+                    <button className="edittBtn">edit</button>
+                  </Link>
+                  <Link>
+                    <button className="dellBtn">delete</button>
+                  </Link>
+                </>
+              )}
+
               <div className="properties-box">
-                <button className="button-47" role="button">
+                <button className="button-47">
                   <span className="fa fa-star-o fa-2x"> Add star</span>
                 </button>
                 <br />
