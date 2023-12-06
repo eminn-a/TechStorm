@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
 const AlsoLikeSingleItem = ({ brand, price, imgUrl, _id }) => {
-  const navigate = useNavigate();
   return (
     <div className="col-md-4">
       <div className="productbox">
@@ -11,7 +10,12 @@ const AlsoLikeSingleItem = ({ brand, price, imgUrl, _id }) => {
           </span>
         </div>
         <div className="product-details">
-          <Link to={"/shop"}>
+          <Link
+            onClick={() =>
+              window.scrollTo({ top: 450, left: 0, behavior: "smooth" })
+            }
+            to={`/products/${_id}`}
+          >
             <h1>{brand}</h1>
           </Link>
           <span className="price">

@@ -9,14 +9,13 @@ const AlsoLike = () => {
   useEffect(() => {
     productService.getLatest3().then((result) => setlatestProduct(result));
   }, []);
+
   return (
     <section className="item content">
       <div className="container">
         <div className="underlined-title">
           <div className="editContent">
-            <h1 className="text-center latestitems">
-              CHECK OUT OUR LATES lAPTOPS
-            </h1>
+            <h1 className="text-center latestitems">YOU ALSO MAY LIKE</h1>
           </div>
           <div className="wow-hr type_short">
             <span className="wow-hr-h">

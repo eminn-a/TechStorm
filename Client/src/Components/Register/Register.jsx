@@ -11,8 +11,9 @@ const registerFormKeys = {
 };
 
 const Register = () => {
-  const { registerSbmitHandler } = useContext(AuthContext);
+  const { registerSbmitHandler, errorMessage } = useContext(AuthContext);
   const { values, onChange, onSubmit } = useForm(registerSbmitHandler, {
+    [registerFormKeys.Username]: "",
     [registerFormKeys.Email]: "",
     [registerFormKeys.Password]: "",
     [registerFormKeys.RePassword]: "",
@@ -40,22 +41,12 @@ const Register = () => {
         </div>
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2">
-            <div className="done">
+            {errorMessage && (
               <div className="alert alert-danger">
-                <button type="button" className="close" data-dismiss="alert">
-                  ×
-                </button>
-                Email or password doesn't match !
+                <span>{errorMessage}</span>
               </div>
-            </div>
-            <div className="done">
-              <div className="alert alert-success">
-                <button type="button" className="close" data-dismiss="alert">
-                  ×
-                </button>
-                You registered successfuly. Thank you!
-              </div>
-            </div>
+            )}
+
             <form id="contactform" onSubmit={onSubmit}>
               <div className="form">
                 <input

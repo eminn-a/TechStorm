@@ -8,7 +8,7 @@ const LoginFormKeys = {
 };
 
 const Login = () => {
-  const { loginSubmitHandler } = useContext(AuthContext);
+  const { loginSubmitHandler, errorMessage } = useContext(AuthContext);
 
   const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
     [LoginFormKeys.email]: "",
@@ -19,7 +19,7 @@ const Login = () => {
     //  scroll to top on page load
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   }, []);
-
+  console.log(typeof errorMessage);
   return (
     <section className="item content">
       <div className="container toparea">
@@ -37,17 +37,11 @@ const Login = () => {
         </div>
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2">
-            {/* --------- */}
-            <div className="done">
+            {errorMessage && (
               <div className="alert alert-danger">
-                <button type="button" className="close" data-dismiss="alert">
-                  ×
-                </button>
-                Email or password doesn't match !
+                <span>{errorMessage}</span>
               </div>
-            </div>
-            {/* --------- */}
-
+            )}
             <form id="contactform" onSubmit={onSubmit}>
               <div className="form">
                 <input

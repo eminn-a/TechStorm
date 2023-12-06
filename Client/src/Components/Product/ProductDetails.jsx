@@ -19,7 +19,7 @@ const Product = () => {
 
   useEffect(() => {
     productService.getById(productId).then((result) => setPorduct(result));
-  }, []);
+  }, [productId]);
 
   useEffect(() => {
     //  scroll to top on page load
@@ -56,6 +56,9 @@ const Product = () => {
       <section className="item content">
         <div className="container toparea">
           <div className="underlined-title">
+            <div className="editContent">
+              <h1 className="text-center latestitems">{product.brand}</h1>
+            </div>
             <div className="wow-hr type_short">
               <span className="wow-hr-h">
                 <i className="fa fa-star"></i>
@@ -64,7 +67,6 @@ const Product = () => {
               </span>
             </div>
           </div>
-
           <div className="done">
             <div className="alert alert-success">
               <button type="button" className="close" data-dismiss="alert">
@@ -73,11 +75,7 @@ const Product = () => {
               You purchased successfully. Thank you!
             </div>
           </div>
-
           <div className="row">
-            <div className="editContent">
-              <h1 className="text-center latestitems">text</h1>
-            </div>
             <div className="col-md-8">
               <div className="productbox">
                 <img src={product.imgUrl} className="center" alt="" />

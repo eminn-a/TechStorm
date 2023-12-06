@@ -19,6 +19,7 @@ import EditProduct from "./Components/EditProduct/EditProduct.jsx";
 import ErrorBoundary from "./Components/ErrorBundary.jsx";
 import AuthGuard from "./Components/Guards/AuthGard.jsx";
 import AdminGuard from "./Components/Guards/AdminGuard.jsx";
+import LogedGard from "./Components/Guards/LogedGard.jsx";
 
 function App() {
   return (
@@ -30,10 +31,11 @@ function App() {
             <Route path={Path.Home} element={<Home />} />
             <Route path={Path.Shop} element={<Shop />} />
             <Route path={Path.Details} element={<Product />} />
-            <Route path={Path.Login} element={<Login />} />
-            <Route path={Path.Register} element={<Register />} />
             <Route path="*" element={<Page404 />} />
-
+            <Route element={<LogedGard />}>
+              <Route path={Path.Login} element={<Login />} />
+              <Route path={Path.Register} element={<Register />} />
+            </Route>
             <Route element={<AuthGuard />}>
               <Route path={Path.Logout} element={<Logout />} />
               <Route path={Path.CheckOut} element={<CheckOut />} />

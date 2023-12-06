@@ -11,9 +11,9 @@ export function useForm(submitHandler, initialValues) {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(values).some((x) => x == "")) {
-      return alert("Fields are required!");
-    }
+    // if (Object.values(values).some((x) => x == "")) {
+    //   // throw new Error("Fields are required!");
+    // }
     submitHandler(values);
   };
 
