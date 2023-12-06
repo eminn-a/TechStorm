@@ -1447,6 +1447,39 @@
   };
   var seedData = {
     laptops: {
+      "aa613607-9549-46ab-b315-f97dc7682200": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        brand: "Acer Nitro 5 AN515-58-5218",
+        cpu: "Intel Core i9-12900H (1.8/5.0GHz, 24M)",
+        gpu: "NVIDIA RTX 4060 8GB GDDR6 DLSS 3",
+        ram: "32 GB DDR5 4800 MHz",
+        storage: "2 TB M.2 NVMe SSD",
+        display: '15.6" (39.62 см) Full HD IPS',
+        os: "Windows 11",
+        imgUrl:
+          "https://ardes.bg/uploads/p/acer-aspire-an515-58-nitro-5-380976.jpg",
+        price: "3942",
+        description:
+          'Лаптоп Acer Nitro 5 AN515-58-5218, 15.6", Full HD, Intel Core i9-12900H (1.8/5.0GHz, 24M), NVIDIA RTX 4060 8GB GDDR6 DLSS 3, 32 GB, 2 TB SSD - NH.QM0EX.013_32GB_2TBSSDNVME_W11P ',
+        _createdOn: 1701883595445,
+      },
+      "dfc69237-fb21-4069-bf67-f0980d1d4a17": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        brand: "ASUS ProArt Studiobook Pro",
+        cpu: "Intel Core i7-12700H (1.7/4.7GHz, 24M)",
+        gpu: "NVIDIA RTX 3070 Ti 8GB",
+        ram: "32 GB DDR5 4800 MHz",
+        storage: "2 x 1 TB SSD",
+        display: '16" (40.64 см) UHD+ OLED',
+        os: "Windows 11",
+        imgUrl:
+          "https://ardes.bg/uploads/p/asus-w7600-proart-studiobook-pro-16-370885.jpg",
+        price: "6091",
+        description:
+          'Лаптоп ASUS ProArt Studiobook Pro 16 H7600ZW-OLED-L751X, 16.0", UHD+, Intel Core i7-12700H (1.7/4.7GHz, 24M), NVIDIA RTX 3070 Ti 8GB, 32 GB, 2 TB SSD - 90NB0XJ1-M001A0 ',
+        _createdOn: 1701883448902,
+      },
+
       "dca67df0-4052-4a9c-9e2a-2865ea8bf5d0": {
         _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
         brand: "ASUS ROG Zephyrus Duo 16",
@@ -1493,6 +1526,21 @@
         description:
           'Лаптоп Apple MacBook Pro 16" 2023, Space Black, 16.2", Apple M3 Max 16C (3.50 - 4.05 GHz, 36 M), 40 ядра GPU Apple M3 Max, 128 GB, 8 TB SSD - MUW63ZE/A_128GB_8TBSSD ',
         _createdOn: 1701779398607,
+      },
+      "de81a3b0-bcc6-4dc2-b1d8-691261301500": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        brand: "HP Omen 17-ck2000nu",
+        cpu: "Intel Core i9-13900HX (1.6/5.4GHz, 36M)",
+        gpu: "NVIDIA RTX 4090 16GB GDDR6 DLSS 3",
+        ram: "32 GB DDR5 4800 MHz",
+        storage: "2 TB M.2 NVMe SSD",
+        display: '17.3" (43.94 см) WQHD IPS',
+        os: "Windows 11",
+        imgUrl: "https://ardes.bg/uploads/p/hp-omen-17-ck0000-351534.jpg",
+        price: "7950",
+        description:
+          'Лаптоп HP Omen 17-ck2000nu, 17.3", WQHD, Intel Core i9-13900HX (1.6/5.4GHz, 36M), NVIDIA RTX 4090 16GB GDDR6 DLSS 3, 32 GB, 2 TB SSD - 95S89EA_W11P ',
+        _createdOn: 1701883330858,
       },
     },
     comments: {
