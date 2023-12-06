@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import * as productService from "../../services/productService.js";
-
 import { useNavigate, useParams } from "react-router-dom";
+
+import * as productService from "../../services/productService.js";
 import Path from "../../paths.js";
 
 const EditProduct = () => {
   const navigate = useNavigate();
   const { productId } = useParams();
+  const [editError, setEditError] = useState("");
   const [product, setProduct] = useState({
     brand: "",
     cpu: "",
@@ -21,25 +22,32 @@ const EditProduct = () => {
   });
 
   useEffect(() => {
-    //  scroll to top on page load
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
-
-  useEffect(() => {
     productService.getById(productId).then((result) => {
       setProduct(result);
     });
   }, [productId]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+  }, []);
+
   const editProductSubmitHandler = async (e) => {
     e.preventDefault();
     const newData = Object.fromEntries(new FormData(e.currentTarget));
     try {
+      if (Object.values(newData).some((x) => x == "")) {
+        window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+        throw new Error("Fields are required!");
+      }
+      if (newData.price <= 0) {
+        window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+        throw new Error("Price must be positive!");
+      }
       await productService.update(productId, newData);
+      navigate(Path.Shop);
     } catch (error) {
-      console.log(error);
+      setEditError(error.message);
     }
-    navigate(Path.Shop);
   };
 
   const onChange = (e) => {
@@ -66,14 +74,11 @@ const EditProduct = () => {
         </div>
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2">
-            <div className="done">
-              <div className="alert alert-success">
-                <button type="button" className="close" data-dismiss="alert">
-                  ×
-                </button>
-                You successfuly registered product!
+            {editError && (
+              <div className="alert alert-danger">
+                <span>{editError}</span>
               </div>
-            </div>
+            )}
 
             <form id="contactform" onSubmit={editProductSubmitHandler}>
               <div className="form">

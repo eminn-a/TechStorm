@@ -44,7 +44,7 @@ const HeaderTemplate = () => {
                       </>
                     )}
                     <li>
-                      <Link to="/checkOut">My Cart: 2</Link>
+                      <Link to="/checkOut">My Cart</Link>
                     </li>
                     <li>
                       <Link to="/logout">Logout</Link>
