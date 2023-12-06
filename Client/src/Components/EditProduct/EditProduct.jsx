@@ -1,10 +1,54 @@
+import { useEffect, useState } from "react";
 import * as productService from "../../services/productService.js";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Path from "../../paths.js";
 
 const EditProduct = () => {
-  window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   const navigate = useNavigate();
+  const { productId } = useParams();
+  const [product, setProduct] = useState({
+    brand: "",
+    cpu: "",
+    gpu: "",
+    ram: "",
+    storage: "",
+    display: "",
+    os: "",
+    imgUrl: "",
+    price: "",
+    description: "",
+  });
+
+  useEffect(() => {
+    //  scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    productService.getById(productId).then((result) => {
+      setProduct(result);
+    });
+  }, [productId]);
+
+  const editProductSubmitHandler = async (e) => {
+    e.preventDefault();
+    const newData = Object.fromEntries(new FormData(e.currentTarget));
+    console.log(newData);
+    try {
+      await productService.update(productId, newData);
+    } catch (error) {
+      console.log(error);
+    }
+    navigate(Path.Shop);
+  };
+
+  const onChange = (e) => {
+    setProduct((state) => ({
+      ...state,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
   return (
     <section className="item content">
@@ -32,21 +76,77 @@ const EditProduct = () => {
               </div>
             </div>
 
-            <form id="contactform">
+            <form id="contactform" onSubmit={editProductSubmitHandler}>
               <div className="form">
-                <input type="text" name="brand" placeholder="Brand *" />
-                <input type="text" name="cpu" placeholder="CPU *" />
-                <input type="text" name="gpu" placeholder="GPU *" />
-                <input type="text" name="ram" placeholder="RAM *" />
-                <input type="text" name="storage" placeholder="Storage *" />
-                <input type="text" name="display" placeholder="Display *" />
-                <input type="text" name="os" placeholder="OS *" />
-                <input type="text" name="imgUrl" placeholder="ImgUrl *" />
-                <input type="number" name="price" placeholder="Price *" />
+                <input
+                  type="text"
+                  name="brand"
+                  value={product.brand}
+                  placeholder="Brand *"
+                  onChange={onChange}
+                />
+                <input
+                  type="text"
+                  name="cpu"
+                  value={product.cpu}
+                  placeholder="CPU *"
+                  onChange={onChange}
+                />
+                <input
+                  type="text"
+                  name="gpu"
+                  value={product.gpu}
+                  placeholder="GPU *"
+                  onChange={onChange}
+                />
+                <input
+                  type="text"
+                  name="ram"
+                  value={product.ram}
+                  placeholder="RAM *"
+                  onChange={onChange}
+                />
+                <input
+                  type="text"
+                  name="storage"
+                  value={product.storage}
+                  placeholder="Storage *"
+                  onChange={onChange}
+                />
+                <input
+                  type="text"
+                  name="display"
+                  value={product.display}
+                  placeholder="Display *"
+                  onChange={onChange}
+                />
+                <input
+                  type="text"
+                  name="os"
+                  value={product.os}
+                  placeholder="OS *"
+                  onChange={onChange}
+                />
+                <input
+                  type="text"
+                  name="imgUrl"
+                  value={product.imgUrl}
+                  placeholder="ImgUrl *"
+                  onChange={onChange}
+                />
+                <input
+                  type="number"
+                  name="price"
+                  value={product.price}
+                  placeholder="Price *"
+                  onChange={onChange}
+                />
                 <textarea
                   name="description"
                   rows="7"
+                  value={product.description}
                   placeholder="Description *"
+                  onChange={onChange}
                 ></textarea>
                 <input
                   type="submit"

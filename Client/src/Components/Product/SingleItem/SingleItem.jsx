@@ -48,9 +48,6 @@ const SingleItem = ({
       productService.deleteById(_id);
       navigate(Path.Shop);
     }
-
-    console.log(`${_id}`);
-    console.log(check);
   };
 
   useEffect(() => {
