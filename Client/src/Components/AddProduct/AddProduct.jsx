@@ -1,19 +1,30 @@
+import { useState } from "react";
 import * as productService from "../../services/productService.js";
 
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
   window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+
+  const [addError, setAdderror] = useState("");
   const navigate = useNavigate();
 
   const createAddProductHandler = async (e) => {
     e.preventDefault();
     const productData = Object.fromEntries(new FormData(e.currentTarget));
     try {
+      if (Object.values(productData).some((x) => x == "")) {
+        throw new Error("Fields are required!");
+      }
+      if (productData.price <= 0) {
+        throw new Error("Price must be positive!");
+      }
       const result = await productService.create(productData);
+      setAdderror("");
       navigate("/shop");
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
+      setAdderror(err.message);
     }
   };
 
@@ -34,14 +45,13 @@ const AddProduct = () => {
         </div>
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2">
-            <div className="done">
+            {/* ---------- */}
+            {addError && (
               <div className="alert alert-danger">
-                <button type="button" className="close" data-dismiss="alert">
-                  ×
-                </button>
-                All fields are required!
+                <span>{addError}</span>
               </div>
-            </div>
+            )}
+
             <form id="contactform" onSubmit={createAddProductHandler}>
               <div className="form">
                 <input type="text" name="brand" placeholder="Brand *" />

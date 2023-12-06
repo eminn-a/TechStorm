@@ -11,7 +11,7 @@ const registerFormKeys = {
 };
 
 const Register = () => {
-  const { registerSbmitHandler, errorMessage } = useContext(AuthContext);
+  const { registerSbmitHandler, registerError } = useContext(AuthContext);
   const { values, onChange, onSubmit } = useForm(registerSbmitHandler, {
     [registerFormKeys.Username]: "",
     [registerFormKeys.Email]: "",
@@ -41,9 +41,9 @@ const Register = () => {
         </div>
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2">
-            {errorMessage && (
+            {registerError && (
               <div className="alert alert-danger">
-                <span>{errorMessage}</span>
+                <span>{registerError}</span>
               </div>
             )}
 

@@ -10,7 +10,8 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = usePersistedState("user", {});
-  const [error, setError] = useState("");
+  const [loginError, setLoginError] = useState("");
+  const [registerError, setregisterError] = useState("");
   const navigate = useNavigate();
 
   const loginSubmitHandler = async (values) => {
@@ -22,13 +23,14 @@ export const AuthProvider = ({ children }) => {
       setAuth(result);
       navigate(Path.Home);
     } catch (err) {
-      setError(err.message);
+      setLoginError(err.message);
     }
+    setTimeout(() => {
+      setLoginError("");
+    }, "5000");
   };
 
   const registerSbmitHandler = async (values) => {
-    const password = values.password;
-    console.log(password.length);
     try {
       if (Object.values(values).some((x) => x == "")) {
         throw new Error("Fields are required!");
@@ -37,6 +39,7 @@ export const AuthProvider = ({ children }) => {
       } else if (values.password.length < 3) {
         throw new Error("Minimum password 3 or more");
       }
+
       const result = await authService.register(
         values.email,
         values.username,
@@ -45,9 +48,11 @@ export const AuthProvider = ({ children }) => {
       setAuth(result);
       navigate(Path.Home);
     } catch (err) {
-      console.log(err.message);
-      setError(err.message);
+      setregisterError(err.message);
     }
+    setTimeout(() => {
+      setregisterError("");
+    }, "5000");
   };
 
   const logoutHandler = () => {
@@ -66,7 +71,8 @@ export const AuthProvider = ({ children }) => {
     userId: auth._id,
     isAuthenticated: !!auth.email,
     isAdmin: auth._id === adminId,
-    errorMessage: error,
+    loginError: loginError,
+    registerError: registerError,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

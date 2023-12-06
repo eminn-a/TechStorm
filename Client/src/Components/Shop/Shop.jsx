@@ -5,10 +5,7 @@ import * as productService from "../../services/productService.js";
 import ShopItem from "./Shop-item/ShopItem.jsx";
 
 const Shop = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
-  scrollToTop();
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
   const [products, setProducts] = useState([]);
   useEffect(() => {
