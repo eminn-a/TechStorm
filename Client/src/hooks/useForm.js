@@ -9,9 +9,11 @@ export function useForm(submitHandler, initialValues) {
       [e.target.name]: e.target.value,
     }));
   };
-
   const onSubmit = (e) => {
     e.preventDefault();
+    if (Object.values(values).some((x) => x == "")) {
+      return alert("Fields are required!");
+    }
     submitHandler(values);
   };
 

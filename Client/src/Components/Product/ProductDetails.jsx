@@ -13,16 +13,39 @@ const Product = () => {
   useEffect(() => {
     productService.getById(productId).then((result) => setPorduct(result));
   }, []);
-
   useEffect(() => {
     //  scroll to top on page load
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   }, []);
-
   return (
     <>
-      <SingleItem {...product} />
-      <AlsoLike />
+      <section className="item content">
+        <div className="container toparea">
+          <div className="underlined-title">
+            <div className="wow-hr type_short">
+              <span className="wow-hr-h">
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+              </span>
+            </div>
+          </div>
+
+          <div className="done">
+            <div className="alert alert-success">
+              <button type="button" className="close" data-dismiss="alert">
+                ×
+              </button>
+              You purchased successfully. Thank you!
+            </div>
+          </div>
+
+          <div className="row">
+            <SingleItem {...product} />
+          </div>
+          <AlsoLike />
+        </div>
+      </section>
     </>
   );
 };

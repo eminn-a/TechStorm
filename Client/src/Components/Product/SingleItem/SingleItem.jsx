@@ -57,96 +57,71 @@ const SingleItem = ({
 
   return (
     <>
-      <section className="item content">
-        <div className="container toparea">
-          <div className="underlined-title">
-            <div className="editContent">
-              <h1 className="text-center latestitems">{brand}</h1>
-            </div>
-            <div className="wow-hr type_short">
-              <span className="wow-hr-h">
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-                <i className="fa fa-star"></i>
-              </span>
-            </div>
-          </div>
-
-          <div className="done">
-            <div className="alert alert-success">
-              <button type="button" className="close" data-dismiss="alert">
-                ×
-              </button>
-              You purchased successfully. Thank you!
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-8">
-              <div className="productbox">
-                <img src={imgUrl} className="center" alt="" />
-                <div className="clearfix"></div>
-                <br />
-                <div className="product-details text-left">
-                  <p>{description}</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <button onClick={onBuyClick} className="btn btn-buynow">
-                Purchase - {price}$
-              </button>
-
-              {isOwner && (
-                <>
-                  <Link to={`/products/${_id}/edit`}>
-                    <button className="edittBtn">edit</button>
-                  </Link>
-
-                  <button onClick={onDeleteClick} className="dellBtn">
-                    delete
-                  </button>
-                </>
-              )}
-
-              <div className="properties-box">
-                <button onClick={onAddStarClick} className="button-47">
-                  <span className="fa fa-star-o fa-2x"> Add star</span>
-                </button>
-
-                <br />
-                <p>Total stars:0</p>
-                <ul className="unstyle">
-                  <li>
-                    <b className="propertyname">Brand:</b> {brand}
-                  </li>
-                  <li>
-                    <b className="propertyname">CPU:</b> {cpu}
-                  </li>
-                  <li>
-                    <b className="propertyname">GPU:</b> {gpu}
-                  </li>
-                  <li>
-                    <b className="propertyname">RAM:</b> {ram}
-                  </li>
-                  <li>
-                    <b className="propertyname">Storage:</b> {storage}
-                  </li>
-                  <li>
-                    <b className="propertyname">Display:</b> {display}
-                  </li>
-                  <li>
-                    <b className="propertyname">OS:</b> {os}
-                  </li>
-                  <li>
-                    <b className="propertyname">Warranty:</b> 24 months
-                  </li>
-                </ul>
-              </div>
-            </div>
+      <div className="editContent">
+        <h1 className="text-center latestitems">{brand}</h1>
+      </div>
+      <div className="col-md-8">
+        <div className="productbox">
+          <img src={imgUrl} className="center" alt="" />
+          <div className="clearfix"></div>
+          <br />
+          <div className="product-details text-left">
+            <p>{description}</p>
           </div>
         </div>
-      </section>
+      </div>
+      <div className="col-md-4">
+        <button onClick={onBuyClick} className="btn btn-buynow">
+          Purchase - {price}$
+        </button>
+
+        {isOwner && (
+          <>
+            <Link to={`/products/${_id}/edit`}>
+              <button className="edittBtn">edit</button>
+            </Link>
+
+            <button onClick={onDeleteClick} className="dellBtn">
+              delete
+            </button>
+          </>
+        )}
+
+        <div className="properties-box">
+          <button onClick={onAddStarClick} className="button-47">
+            <span className="fa fa-star-o fa-2x"> Add star</span>
+          </button>
+
+          <br />
+          <p>Total stars:0</p>
+          <ul className="unstyle">
+            <li>
+              <b className="propertyname">Brand:</b> {brand}
+            </li>
+            <li>
+              <b className="propertyname">CPU:</b> {cpu}
+            </li>
+            <li>
+              <b className="propertyname">GPU:</b> {gpu}
+            </li>
+            <li>
+              <b className="propertyname">RAM:</b> {ram}
+            </li>
+            <li>
+              <b className="propertyname">Storage:</b> {storage}
+            </li>
+            <li>
+              <b className="propertyname">Display:</b> {display}
+            </li>
+            <li>
+              <b className="propertyname">OS:</b> {os}
+            </li>
+            <li>
+              <b className="propertyname">Warranty:</b> 24 months
+            </li>
+          </ul>
+        </div>
+      </div>
     </>
   );
 };
