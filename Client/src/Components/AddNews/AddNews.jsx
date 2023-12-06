@@ -24,7 +24,7 @@ const AddNews = () => {
                 All fields are required!
               </div>
             </div>
-            <form method="post" action="contact.php" id="contactform">
+            <form id="contactform">
               <div className="form">
                 <input type="text" name="title" placeholder="Title Here *" />
                 <input

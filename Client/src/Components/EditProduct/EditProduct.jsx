@@ -34,7 +34,6 @@ const EditProduct = () => {
   const editProductSubmitHandler = async (e) => {
     e.preventDefault();
     const newData = Object.fromEntries(new FormData(e.currentTarget));
-    console.log(newData);
     try {
       await productService.update(productId, newData);
     } catch (error) {

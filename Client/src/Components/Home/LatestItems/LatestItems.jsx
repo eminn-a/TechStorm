@@ -9,7 +9,6 @@ const LatestItems = () => {
   useEffect(() => {
     productService.getLatest6().then((result) => setlatestProduct(result));
   }, []);
-  console.log(latestProduct);
   return (
     <section className="item content">
       <div className="container">
@@ -29,6 +28,14 @@ const LatestItems = () => {
         {latestProduct.map((x) => (
           <SingleLatestItem key={x._id} {...x} />
         ))}
+
+        {latestProduct.length === 0 && (
+          <>
+            <h1 className="text-center">There is no products</h1>
+            <br />
+            <br />
+          </>
+        )}
       </div>
     </section>
   );

@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 export default function ShopItem({ _id, cpu, gpu, ram, brand, imgUrl, price }) {
+  const onBuyClick = () => {
+    console.log(`Buyned item ${brand}${_id}`);
+  };
+
   return (
     <div className="col-md-4">
       <div className="productbox">
@@ -22,7 +26,9 @@ export default function ShopItem({ _id, cpu, gpu, ram, brand, imgUrl, price }) {
           <Link to={`/products/${_id}`}>
             <button className="detailsButton">Details</button>
           </Link>
-          <button className="detailsButton">Buy</button>
+          <button onClick={onBuyClick} className="detailsButton">
+            Buy
+          </button>
         </div>
       </div>
     </div>

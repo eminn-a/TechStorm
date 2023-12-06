@@ -9,7 +9,6 @@ const AlsoLike = () => {
   useEffect(() => {
     productService.getLatest3().then((result) => setlatestProduct(result));
   }, []);
-  console.log(latestProduct);
   return (
     <section className="item content">
       <div className="container">
