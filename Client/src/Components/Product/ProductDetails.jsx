@@ -18,6 +18,7 @@ const Product = () => {
     //  scroll to top on page load
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   }, []);
+
   return (
     <>
       <SingleItem {...product} />
