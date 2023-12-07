@@ -1,28 +1,36 @@
-import AlsoLike from "./AlsoLike/AlsoLike.jsx";
-
-import "./Style.css";
-
 import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+
+import AlsoLike from "./AlsoLike/AlsoLike.jsx";
 import AuthContext from "../../contexts/authContext.jsx";
 import Path from "../../paths.js";
-
+import "./Style.css";
 import * as productService from "../../services/productService.js";
+import {
+  getLikes,
+  getOwnLike,
+  productLike,
+} from "../../services/productLikes.js";
 
 const Product = () => {
   const navigate = useNavigate();
-  const [product, setPorduct] = useState({});
-  const { productId } = useParams();
   const { userId } = useContext(AuthContext);
+  const { productId } = useParams();
+  const [product, setPorduct] = useState({});
+  const [likes, setLikes] = useState(0);
+  const [alrdyLiked, setAlrdyLiked] = useState("");
+  const [succesAlert, setSuccesAlert] = useState("");
+  const [errAlert, setErrAlert] = useState("");
 
   const isOwner = userId === product._ownerId;
 
   useEffect(() => {
     productService.getById(productId).then((result) => setPorduct(result));
+    getLikes(productId).then((likes) => setLikes(likes));
+    getOwnLike(productId, userId).then((liked) => setAlrdyLiked(liked));
   }, [productId]);
 
   useEffect(() => {
-    //  scroll to top on page load
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   }, []);
 
@@ -31,20 +39,39 @@ const Product = () => {
       navigate(Path.Login);
       return;
     }
-    return console.log("buyed item");
+    setSuccesAlert("You purchased successfully. Thank you!");
+    setTimeout(() => {
+      setSuccesAlert("");
+    }, "5000");
+    return;
   };
 
-  const onAddStarClick = () => {
+  const onAddStarClick = async () => {
     if (!userId) {
       navigate("/login");
       return;
     }
-    return console.log("added star");
+    if (alrdyLiked) {
+      setErrAlert("You already added star!");
+      setTimeout(() => {
+        setErrAlert("");
+      }, "5000");
+      return;
+    }
+    try {
+      await productLike(productId);
+      setLikes(likes + 1);
+      setAlrdyLiked(1);
+    } catch (error) {
+      setErrAlert(error.message);
+      setTimeout(() => {
+        setErrAlert("");
+      }, "5000");
+    }
   };
 
   const onDeleteClick = () => {
     const check = confirm(`You want to delete this item: ${product.brand}`);
-
     if (check) {
       productService.deleteById(product._id);
       navigate(Path.Shop);
@@ -68,12 +95,22 @@ const Product = () => {
             </div>
           </div>
           <div className="done">
-            <div className="alert alert-success">
-              <button type="button" className="close" data-dismiss="alert">
-                ×
-              </button>
-              You purchased successfully. Thank you!
-            </div>
+            {succesAlert && (
+              <div className="alert alert-success">
+                <button type="button" className="close" data-dismiss="alert">
+                  ×
+                </button>
+                You purchased successfully. Thank you!
+              </div>
+            )}
+            {errAlert && (
+              <div className="alert alert-danger">
+                <button type="button" className="close" data-dismiss="alert">
+                  ×
+                </button>
+                {errAlert}
+              </div>
+            )}
           </div>
           <div className="row">
             <div className="col-md-8">
@@ -109,7 +146,7 @@ const Product = () => {
                 </button>
 
                 <br />
-                <p>Total stars:0</p>
+                <p>Total stars:{likes}</p>
                 <ul className="unstyle">
                   <li>
                     <b className="propertyname">Brand:</b> {product.brand}

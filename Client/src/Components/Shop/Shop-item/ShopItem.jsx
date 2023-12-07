@@ -1,8 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Path from "../../../paths";
+import { useContext } from "react";
+import AuthContext from "../../../contexts/authContext";
 
 export default function ShopItem({ _id, cpu, gpu, ram, brand, imgUrl, price }) {
+  const { userId } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const onBuyClick = () => {
-    console.log(`Buyned item ${brand}${_id}`);
+    if (!userId) {
+      navigate(Path.Login);
+      return;
+    }
+    console.log(`Buyned item ${brand}${_id}${userId}`);
   };
 
   return (
