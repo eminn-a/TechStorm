@@ -26,7 +26,8 @@ const Product = () => {
     likeService.getLikes(productId).then((likes) => setLikes(likes));
     likeService
       .getOwnLike(productId, userId)
-      .then((liked) => setAlrdyLiked(liked));
+      .then((liked) => setAlrdyLiked(liked))
+      .catch((err) => alert(err.message));
   }, [productId]);
 
   useEffect(() => {

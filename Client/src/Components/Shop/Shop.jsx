@@ -7,11 +7,14 @@ import ShopItem from "./Shop-item/ShopItem.jsx";
 const Shop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
+  const [succesAlert, setSuccesAlert] = useState("");
+  const [errAlert, setErrAlert] = useState("");
   const [products, setProducts] = useState([]);
   useEffect(() => {
     productService
       .getAll()
-      .then((result) => setProducts(Object.values(result)));
+      .then((result) => setProducts(Object.values(result)))
+      .catch((err) => alert(err.message));
   }, []);
   return (
     <>
@@ -20,6 +23,24 @@ const Shop = () => {
           <div className="underlined-title">
             <div className="editContent">
               <h1 className="text-center latestitems">OUR PRODUCTS</h1>
+            </div>
+            <div className="done">
+              {succesAlert && (
+                <div className="alert alert-success">
+                  <button type="button" className="close" data-dismiss="alert">
+                    ×
+                  </button>
+                  You purchased successfully. Thank you!
+                </div>
+              )}
+              {errAlert && (
+                <div className="alert alert-danger">
+                  <button type="button" className="close" data-dismiss="alert">
+                    ×
+                  </button>
+                  {errAlert}
+                </div>
+              )}
             </div>
             <div className="wow-hr type_short">
               <span className="wow-hr-h">

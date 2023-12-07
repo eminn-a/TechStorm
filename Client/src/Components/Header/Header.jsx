@@ -38,9 +38,9 @@ const HeaderTemplate = () => {
                         <li>
                           <Link to="/addProduct">Add product</Link>
                         </li>
-                        <li>
+                        {/* <li>
                           <Link to="/addNews">Add news</Link>
-                        </li>
+                        </li> */}
                       </>
                     )}
                     <li>

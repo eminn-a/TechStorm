@@ -7,7 +7,10 @@ const LatestItems = () => {
   const [latestProduct, setlatestProduct] = useState([]);
 
   useEffect(() => {
-    productService.getLatest6().then((result) => setlatestProduct(result));
+    productService
+      .getLatest6()
+      .then((result) => setlatestProduct(result))
+      .catch((err) => alert(err.message));
   }, []);
   return (
     <section className="item content">

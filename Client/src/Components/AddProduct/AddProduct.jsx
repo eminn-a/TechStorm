@@ -12,6 +12,7 @@ const AddProduct = () => {
   const createAddProductHandler = async (e) => {
     e.preventDefault();
     const productData = Object.fromEntries(new FormData(e.currentTarget));
+
     try {
       if (Object.values(productData).some((x) => x == "")) {
         throw new Error("Fields are required!");
@@ -19,7 +20,7 @@ const AddProduct = () => {
       if (productData.price <= 0) {
         throw new Error("Price must be positive!");
       }
-      const result = await productService.create(productData);
+      await productService.create(productData);
       setAdderror("");
       navigate("/shop");
     } catch (err) {

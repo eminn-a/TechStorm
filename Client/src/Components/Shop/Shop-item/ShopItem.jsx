@@ -3,16 +3,33 @@ import Path from "../../../paths";
 import { useContext } from "react";
 import AuthContext from "../../../contexts/authContext";
 
+import * as buyService from "../../../services/productBuyService.js";
+
 export default function ShopItem({ _id, cpu, gpu, ram, brand, imgUrl, price }) {
   const { userId } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const onBuyClick = () => {
+  const data = {
+    cpu,
+    gpu,
+    ram,
+    brand,
+    imgUrl,
+    price,
+    productId: _id,
+  };
+
+  const onBuyClick = async () => {
     if (!userId) {
       navigate(Path.Login);
       return;
     }
-    console.log(`Buyned item ${brand}${_id}${userId}`);
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      await buyService.productBuy(data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (

@@ -7,7 +7,10 @@ const AlsoLike = () => {
   const [latestProduct, setlatestProduct] = useState([]);
 
   useEffect(() => {
-    productService.getLatest3().then((result) => setlatestProduct(result));
+    productService
+      .getLatest3()
+      .then((result) => setlatestProduct(result))
+      .catch((err) => alert(err.message));
   }, []);
 
   return (

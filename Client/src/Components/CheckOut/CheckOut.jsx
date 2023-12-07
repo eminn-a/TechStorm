@@ -9,8 +9,9 @@ const CheckOut = () => {
   const { userId } = useContext(AuthContext);
   const [buyedItems, setBuyedItems] = useState([]);
 
-  //  scroll to top on page load
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, []);
 
   useEffect(() => {
     buyService.getAllbuyed(userId).then((result) => setBuyedItems(result));
