@@ -6,11 +6,8 @@ import AuthContext from "../../contexts/authContext.jsx";
 import Path from "../../paths.js";
 import "./Style.css";
 import * as productService from "../../services/productService.js";
-import {
-  getLikes,
-  getOwnLike,
-  productLike,
-} from "../../services/productLikes.js";
+import * as likeService from "../../services/productLikesService.js";
+import * as buyService from "../../services/productBuyService.js";
 
 const Product = () => {
   const navigate = useNavigate();
@@ -26,24 +23,31 @@ const Product = () => {
 
   useEffect(() => {
     productService.getById(productId).then((result) => setPorduct(result));
-    getLikes(productId).then((likes) => setLikes(likes));
-    getOwnLike(productId, userId).then((liked) => setAlrdyLiked(liked));
+    likeService.getLikes(productId).then((likes) => setLikes(likes));
+    likeService
+      .getOwnLike(productId, userId)
+      .then((liked) => setAlrdyLiked(liked));
   }, [productId]);
 
   useEffect(() => {
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   }, []);
 
-  const onBuyClick = () => {
+  const onBuyClick = async () => {
     if (!userId) {
       navigate(Path.Login);
       return;
     }
-    setSuccesAlert("You purchased successfully. Thank you!");
-    setTimeout(() => {
-      setSuccesAlert("");
-    }, "5000");
-    return;
+    try {
+      product["productId"] = productId;
+      await buyService.productBuy(product);
+      setSuccesAlert("You purchased successfully. Thank you!");
+      setTimeout(() => {
+        setSuccesAlert("");
+      }, "5000");
+    } catch (error) {
+      setErrAlert(error.message);
+    }
   };
 
   const onAddStarClick = async () => {
@@ -59,7 +63,7 @@ const Product = () => {
       return;
     }
     try {
-      await productLike(productId);
+      await likeService.productLike(productId);
       setLikes(likes + 1);
       setAlrdyLiked(1);
     } catch (error) {

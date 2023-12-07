@@ -1,15 +1,31 @@
 import { Link } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../contexts/authContext";
+import * as buyService from "../../services/productBuyService.js";
+import SingleBuyedItem from "./singleBuyedItem/singleBuyedItem.jsx";
 
 const CheckOut = () => {
   const { username } = useContext(AuthContext);
+  const { userId } = useContext(AuthContext);
+  const [buyedItems, setBuyedItems] = useState([]);
+
+  //  scroll to top on page load
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
   useEffect(() => {
-    //  scroll to top on page load
-    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+    buyService.getAllbuyed(userId).then((result) => setBuyedItems(result));
   }, []);
 
+  async function onDellClick(id) {
+    try {
+      await buyService.deleteById(id);
+      setBuyedItems(buyedItems.filter((x) => x._id !== id));
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  console.log(buyedItems);
   return (
     <section className="item content">
       <div className="container toparea">
@@ -34,70 +50,19 @@ const CheckOut = () => {
                     <th className="edd_cart_actions">Actions</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {/* a singel item */}
-                  <tr
-                    className="edd_cart_item"
-                    id="edd_cart_item_0_25"
-                    data-download-id="25"
-                  >
-                    <td className="edd_cart_item_name">
-                      <div className="edd_cart_item_image">
-                        <Link to="/product">
-                          <h4>ASUS TUF Gaming F15</h4>
-                          <img
-                            src="https://ardes.bg/uploads/p/asus-fx507-tuf-gaming-f15-2023-439875.jpg"
-                            alt="id"
-                          />
-                        </Link>
-                      </div>
-                    </td>
+                <tbody></tbody>
+                {buyedItems.map((buyedItems) => (
+                  <SingleBuyedItem
+                    key={buyedItems._id}
+                    {...buyedItems}
+                    onDellClick={onDellClick}
+                  />
+                ))}
 
-                    <td className="edd_cart_item_price">$1458</td>
-                    <td className="edd_cart_actions">
-                      <button
-                        className="detailsButton"
-                        onClick={() => console.log("removed!")}
-                      >
-                        Remove
-                      </button>
-                    </td>
-                  </tr>
-                  {/* ------- */}
-                  {/* a singel item */}
-                  <tr
-                    className="edd_cart_item"
-                    id="edd_cart_item_0_25"
-                    data-download-id="25"
-                  >
-                    <td className="edd_cart_item_name">
-                      <div className="edd_cart_item_image">
-                        <Link to="/product">
-                          <h4>ASUS TUF Gaming F15</h4>
-                          <img
-                            src="https://ardes.bg/uploads/p/asus-fx507-tuf-gaming-f15-2023-439875.jpg"
-                            alt="id"
-                          />
-                        </Link>
-                      </div>
-                    </td>
-
-                    <td className="edd_cart_item_price">$1458</td>
-                    <td className="edd_cart_actions">
-                      <button
-                        className="detailsButton"
-                        onClick={() => console.log("removed!")}
-                      >
-                        Remove
-                      </button>
-                    </td>
-                  </tr>
-                  {/* ------- */}
-                </tbody>
                 <tfoot>
                   <tr className="edd_cart_footer_row">
                     <th colSpan="5" className="edd_cart_total">
-                      <h2>Total:$1458</h2>
+                      {/* <h2>Total:$1458</h2> */}
                     </th>
                   </tr>
                 </tfoot>

@@ -13,7 +13,6 @@ const Shop = () => {
       .getAll()
       .then((result) => setProducts(Object.values(result)));
   }, []);
-
   return (
     <>
       <section className="item content">
