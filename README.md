@@ -11,9 +11,10 @@ Welcome to the StormTech SoftUni project! This project aims to provide a robust 
 ## Table of Contents
 
 - [Getting Started](#getting-started)
+
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Configuration](#configuration)
+
 - [Features](#features)
 - [Usage](#usage)
 - [Contributing](#contributing)
