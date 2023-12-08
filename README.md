@@ -70,7 +70,7 @@ Before you begin, ensure you have the following prerequisites:
    npm run dev
    ```
 
-2. You need to start serrver aswell:
+2. You need to start server aswell:
 
    ```bash
    cd server
