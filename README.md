@@ -2,6 +2,8 @@
 
 ![Project Logo](Client/public/images/TechStorm.png)
 
+<img src="Client/public/images/TechStorm.png" alt="Project Logo" width="200" height="200">
+
 ## Overview
 
 Welcome to the E-Commerce Technology project! This project aims to provide a robust and scalable e-commerce solution leveraging cutting-edge technologies. Whether you are a developer, business owner, or contributor, this README.md file will guide you through the setup, features, and contribution process.
