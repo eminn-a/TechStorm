@@ -61,18 +61,16 @@ Before you begin, ensure you have the following prerequisites:
 - **Product Management**: Easily manage products, categories, and inventory.
 - **Shopping Cart**: Intuitive shopping cart functionality for users.
 - **Checkout Process**: Streamlined checkout process with various payment options.
-- **Order Tracking**: Users can track their orders in real-time.
-- **Responsive Design**: A mobile-friendly interface for a seamless user experience.
 
 ## Usage
 
 1. Start the application:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
-2. Access the application in your web browser at [http://localhost:3000](http://localhost:3000).
+2. Access the application in your web browser at [http://localhost:5173/](http://localhost:5173/).
 
 3. Explore the various features and functionalities of the e-commerce platform.
 
