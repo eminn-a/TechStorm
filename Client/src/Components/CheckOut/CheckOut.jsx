@@ -14,7 +14,10 @@ const CheckOut = () => {
   }, []);
 
   useEffect(() => {
-    buyService.getAllbuyed(userId).then((result) => setBuyedItems(result));
+    buyService
+      .getAllbuyed(userId)
+      .then((result) => setBuyedItems(result))
+      .catch((err) => alert(err.message));
   }, []);
 
   async function onDellClick(id) {
@@ -22,7 +25,7 @@ const CheckOut = () => {
       await buyService.deleteById(id);
       setBuyedItems(buyedItems.filter((x) => x._id !== id));
     } catch (error) {
-      console.log(error.message);
+      alert(error.message);
     }
   }
 

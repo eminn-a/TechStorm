@@ -1629,7 +1629,13 @@
       },
     },
     furniture: {},
-    orders: {},
+    like: {
+      "51f41690-0b7c-4dfd-981c-a1b0d982ad1c": {
+        _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        productId: "dfc69237-fb21-4069-bf67-f0980d1d4a17",
+        _createdOn: 1702027171251,
+      },
+    },
     movies: {
       "1240549d-f0e0-497e-ab99-eb8f703713d7": {
         _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",

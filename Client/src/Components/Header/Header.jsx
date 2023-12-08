@@ -15,8 +15,7 @@ const HeaderTemplate = () => {
           <div className="container">
             <div className="navbar-header">
               <Link to="/" className="navbar-brand brand">
-                {" "}
-                Tech⚡Storm{" "}
+                Tech⚡Storm
               </Link>
             </div>
             <div id="navbar-collapse-02" className="collapse navbar-collapse">

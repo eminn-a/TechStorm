@@ -10,6 +10,7 @@ const LatestNewsTemp = () => {
       .then((result) => setNewsData(result))
       .catch((err) => alert(err.message));
   }, []);
+  console.log(newsData);
   return (
     <div className="item content">
       <div className="container">

@@ -16,6 +16,14 @@ const Shop = () => {
       .then((result) => setProducts(Object.values(result)))
       .catch((err) => alert(err.message));
   }, []);
+
+  const succesHandler = (message) => {
+    setSuccesAlert(message);
+    setTimeout(() => {
+      setSuccesAlert("");
+    }, 3000);
+  };
+
   return (
     <>
       <section className="item content">
@@ -30,7 +38,8 @@ const Shop = () => {
                   <button type="button" className="close" data-dismiss="alert">
                     ×
                   </button>
-                  You purchased successfully. Thank you!
+                  {/* You purchased successfully. Thank you! */}
+                  {succesAlert}
                 </div>
               )}
               {errAlert && (
@@ -52,7 +61,11 @@ const Shop = () => {
           </div>
           <div className="row">
             {products.map((products) => (
-              <ShopItem key={products._id} {...products} />
+              <ShopItem
+                key={products._id}
+                {...products}
+                succesHandler={succesHandler}
+              />
             ))}
 
             {products.length === 0 && (

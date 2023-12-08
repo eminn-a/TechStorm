@@ -5,7 +5,16 @@ import AuthContext from "../../../contexts/authContext";
 
 import * as buyService from "../../../services/productBuyService.js";
 
-export default function ShopItem({ _id, cpu, gpu, ram, brand, imgUrl, price }) {
+export default function ShopItem({
+  _id,
+  cpu,
+  gpu,
+  ram,
+  brand,
+  imgUrl,
+  price,
+  succesHandler,
+}) {
   const { userId } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -26,6 +35,7 @@ export default function ShopItem({ _id, cpu, gpu, ram, brand, imgUrl, price }) {
     }
     try {
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      succesHandler(`Succesfuly purchased ${brand}`);
       await buyService.productBuy(data);
     } catch (error) {
       console.log(error.message);
