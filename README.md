@@ -2,7 +2,7 @@
 
 <!-- ![Project Logo](Client/public/images/TechStorm.png) -->
 
-<img src="/Client/public/images/TechStorm.png" alt="Project Logo" width="200" height="200">
+<img src="/Client/public/images/TechStorm.png" alt="Project Logo" width="700" height="700">
 
 ## Overview
 
