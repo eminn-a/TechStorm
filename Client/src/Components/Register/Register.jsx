@@ -12,12 +12,15 @@ const registerFormKeys = {
 
 const Register = () => {
   const { registerSbmitHandler, registerError } = useContext(AuthContext);
-  const { values, onChange, onSubmit } = useForm(registerSbmitHandler, {
-    [registerFormKeys.Username]: "",
-    [registerFormKeys.Email]: "",
-    [registerFormKeys.Password]: "",
-    [registerFormKeys.RePassword]: "",
-  });
+  const { values, onChange, onSubmit } = useForm(
+    {
+      [registerFormKeys.Username]: "",
+      [registerFormKeys.Email]: "",
+      [registerFormKeys.Password]: "",
+      [registerFormKeys.RePassword]: "",
+    },
+    registerSbmitHandler
+  );
 
   useEffect(() => {
     //  scroll to top on page load

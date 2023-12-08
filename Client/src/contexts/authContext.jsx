@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import * as authService from "../services/authSrvice.js";
 import Path from "../paths.js";
 import usePersistedState from "../hooks/usePersistedState.js";
+import registerValidation from "../validation/registerValidation.js";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -16,7 +17,6 @@ export const AuthProvider = ({ children }) => {
       if (Object.values(values).some((x) => x == "")) {
         throw new Error("Fields are required!");
       }
-
       const result = await authService.login(values.email, values.password);
       setAuth(result);
       navigate(Path.Home);
@@ -30,19 +30,7 @@ export const AuthProvider = ({ children }) => {
 
   const registerSbmitHandler = async (values) => {
     try {
-      if (Object.values(values).some((x) => x == "")) {
-        throw new Error("Fields are required!");
-      }
-      if (values.username.length < 3) {
-        throw new Error("Username must be at least 3 characters long!");
-      }
-      if (values.password !== values.repassword) {
-        throw new Error("Password doesn't match!");
-      }
-      if (values.password.length < 3) {
-        throw new Error("Password must be at least 3 characters long!");
-      }
-
+      registerValidation(values);
       const result = await authService.register(
         values.email,
         values.username,

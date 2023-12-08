@@ -22,8 +22,19 @@ const Product = () => {
   const isOwner = userId === product._ownerId;
 
   useEffect(() => {
-    productService.getById(productId).then((result) => setPorduct(result));
-    likeService.getLikes(productId).then((likes) => setLikes(likes));
+    productService
+      .getById(productId)
+      .then((result) => setPorduct(result))
+      .catch(() => navigate("*"));
+    likeService
+      .getLikes(productId)
+      .then((likes) => setLikes(likes))
+      .catch((err) => {
+        setErrAlert(err.message);
+        setTimeout(() => {
+          setSuccesAlert("");
+        }, "5000");
+      });
     likeService
       .getOwnLike(productId, userId)
       .then((liked) => setAlrdyLiked(liked))
@@ -47,6 +58,7 @@ const Product = () => {
       }, "5000");
     } catch (error) {
       setErrAlert(error.message);
+      navigate(Path.Shop);
     }
   };
 

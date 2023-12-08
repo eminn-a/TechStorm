@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import * as productService from "../../services/productService.js";
 import Path from "../../paths.js";
+import productValidation from "../../validation/productValidation.js";
 
 const EditProduct = () => {
   const navigate = useNavigate();
@@ -22,43 +23,24 @@ const EditProduct = () => {
   });
 
   useEffect(() => {
-    productService.getById(productId).then((result) => {
-      setProduct(result);
-    });
+    productService
+      .getById(productId)
+      .then((result) => {
+        setProduct(result);
+      })
+      .catch((err) => setEditError(err.message));
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   }, [productId]);
 
   const editProductSubmitHandler = async (e) => {
+    console.log(product);
     e.preventDefault();
-    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
-    const newData = Object.fromEntries(new FormData(e.currentTarget));
     try {
-      if (Object.values(newData).some((x) => x == "")) {
-        throw new Error("Fields are required!");
-      }
-      if (newData.price <= 0) {
-        throw new Error("Price must be positive!");
-      }
-      if (!/^https?:\/\//.test(newData.imgUrl)) {
-        throw new Error("image URL is not valid! (https)");
-      }
-      if (newData.brand.length > 30) {
-        console.log(newData.brand.length);
-        throw new Error("Brand should be less than 30 characters");
-      }
-      if (newData.cpu.length > 50) {
-        throw new Error("CPU should be less than 50 characters");
-      }
-      if (newData.gpu.length > 50) {
-        throw new Error("GPU should be less than 50 characters");
-      }
-      if (newData.ram.length > 25) {
-        throw new Error("RAM should be less than 25 characters");
-      }
-
-      await productService.update(productId, newData);
+      productValidation(product);
+      await productService.update(productId, product);
       navigate(Path.Shop);
     } catch (error) {
+      window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
       setEditError(error.message);
     }
   };

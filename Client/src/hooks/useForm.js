@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useForm(submitHandler, initialValues) {
+export function useForm(initialValues, submitHandler) {
   const [values, setValues] = useState(initialValues);
 
   const onChange = (e) => {
@@ -11,9 +11,6 @@ export function useForm(submitHandler, initialValues) {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    // if (Object.values(values).some((x) => x == "")) {
-    //   // throw new Error("Fields are required!");
-    // }
     submitHandler(values);
   };
 

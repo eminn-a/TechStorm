@@ -10,10 +10,13 @@ const LoginFormKeys = {
 const Login = () => {
   const { loginSubmitHandler, loginError } = useContext(AuthContext);
 
-  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
-    [LoginFormKeys.email]: "",
-    [LoginFormKeys.password]: "",
-  });
+  const { values, onChange, onSubmit } = useForm(
+    {
+      [LoginFormKeys.email]: "",
+      [LoginFormKeys.password]: "",
+    },
+    loginSubmitHandler
+  );
 
   useEffect(() => {
     //  scroll to top on page load
