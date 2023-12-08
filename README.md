@@ -1,7 +1,5 @@
 # TechStrom SoftUni Project
 
-<!-- ![Project Logo](Client/public/images/TechStorm.png) -->
-
 <img src="/Client/public/images/TechStorm.png" alt="Project Logo" width="700" height="700">
 
 ## Overview
@@ -58,9 +56,10 @@ Before you begin, ensure you have the following prerequisites:
 ## Features
 
 - **User Authentication**: Secure user authentication and authorization.
-- **Product Management**: Easily manage products, categories, and inventory.
+- **Product Management-Admin**: Easily manage products like add,edit and delete.
 - **Shopping Cart**: Intuitive shopping cart functionality for users.
-- **Checkout Process**: Streamlined checkout process with various payment options.
+- **Product Add Star**: Add star to selected product.
+- **News section**: Check out tech news from News API.
 
 ## Usage
 
