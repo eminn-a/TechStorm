@@ -23,7 +23,7 @@ const Shop = () => {
     console.log("her1");
     setTimeout(() => {
       setSuccesAlert("");
-    }, 3000);
+    }, 5000);
   };
 
   return (
