@@ -74,19 +74,21 @@ Before you begin, ensure you have the following prerequisites:
 
    ```bash
    cd server
-   `
+
    ```
 
    2.1
 
    ```bash
    node server.js
-   `
+
    ```
 
-3. Access the application in your web browser at [http://localhost:5173/](http://localhost:5173/).
+3. You can check server info here [Server Info](https://github.com/softuni-practice-server/softuni-practice-server).
 
-4. Explore the various features and functionalities of the e-commerce platform.
+4. Access the application in your web browser at [http://localhost:5173/](http://localhost:5173/).
+
+5. Explore the various features and functionalities of the e-commerce platform.
 
 ## Contributing
 
