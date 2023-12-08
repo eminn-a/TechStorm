@@ -30,16 +30,32 @@ const EditProduct = () => {
 
   const editProductSubmitHandler = async (e) => {
     e.preventDefault();
+    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
     const newData = Object.fromEntries(new FormData(e.currentTarget));
     try {
       if (Object.values(newData).some((x) => x == "")) {
-        window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
         throw new Error("Fields are required!");
       }
       if (newData.price <= 0) {
-        window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
         throw new Error("Price must be positive!");
       }
+      if (!/^https?:\/\//.test(newData.imgUrl)) {
+        throw new Error("image URL is not valid! (https)");
+      }
+      if (newData.brand.length > 30) {
+        console.log(newData.brand.length);
+        throw new Error("Brand should be less than 30 characters");
+      }
+      if (newData.cpu.length > 50) {
+        throw new Error("CPU should be less than 50 characters");
+      }
+      if (newData.gpu.length > 50) {
+        throw new Error("GPU should be less than 50 characters");
+      }
+      if (newData.ram.length > 25) {
+        throw new Error("RAM should be less than 25 characters");
+      }
+
       await productService.update(productId, newData);
       navigate(Path.Shop);
     } catch (error) {
