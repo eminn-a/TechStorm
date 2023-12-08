@@ -41,6 +41,9 @@ const EditProduct = () => {
     } catch (error) {
       window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
       setEditError(error.message);
+      setTimeout(() => {
+        setEditError("");
+      }, 5000);
     }
   };
 

@@ -23,6 +23,16 @@ export const productValidation = (productData) => {
   if (productData.storage.length > 30) {
     throw new Error("Storage should be less than 30 characters");
   }
+  if (productData.display.length > 50) {
+    throw new Error("Display should be less than 50 characters");
+  }
+  if (productData.os.length > 20) {
+    throw new Error("OS should be less than 20 characters");
+  }
+  if (productData.description.length > 350) {
+    throw new Error("Description should be less than 350 characters");
+  }
+
   return productData;
 };
 

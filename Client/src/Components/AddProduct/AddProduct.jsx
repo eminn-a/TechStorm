@@ -16,12 +16,14 @@ const AddProduct = () => {
     try {
       productValidation(productData);
       await productService.create(productData);
-      setAdderror("");
       navigate("/shop");
     } catch (err) {
       console.log(err.message);
       window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
       setAdderror(err.message);
+      setTimeout(() => {
+        setAdderror("");
+      }, 5000);
     }
   };
 
