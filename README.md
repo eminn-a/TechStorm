@@ -48,16 +48,11 @@ Before you begin, ensure you have the following prerequisites:
    npm install
    ```
 
-````
-### Configuration
+4. Run project:
 
-1. Copy the example configuration file:
-
-  ```bash
-  cp config.example.js config.js
-````
-
-2. Edit the `config.js` file and set up your database connection details, API keys, and other configuration parameters.
+   ```bash
+   npm run dev
+   ```
 
 ## Features
 
