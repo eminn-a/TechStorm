@@ -6,7 +6,7 @@
 
 ## Overview
 
-Welcome to the E-Commerce Technology project! This project aims to provide a robust and scalable e-commerce solution leveraging cutting-edge technologies. Whether you are a developer, business owner, or contributor, this README.md file will guide you through the setup, features, and contribution process.
+Welcome to the StormTech SoftUni project! This project aims to provide a robust and scalable e-commerce solution leveraging cutting-edge technologies. Whether you are a developer, business owner, or contributor, this README.md file will guide you through the setup, features, and contribution process.
 
 ## Table of Contents
 
@@ -33,13 +33,13 @@ Before you begin, ensure you have the following prerequisites:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/e-commerce-tech.git
+   git clone https://github.com/eminn-a/TechStorm-project
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd e-commerce-tech
+   cd client
    ```
 
 3. Install dependencies:
@@ -48,13 +48,14 @@ Before you begin, ensure you have the following prerequisites:
    npm install
    ```
 
+````
 ### Configuration
 
 1. Copy the example configuration file:
 
-   ```bash
-   cp config.example.js config.js
-   ```
+  ```bash
+  cp config.example.js config.js
+````
 
 2. Edit the `config.js` file and set up your database connection details, API keys, and other configuration parameters.
 
