@@ -5,20 +5,22 @@ import * as productService from "../../services/productService.js";
 import ShopItem from "./Shop-item/ShopItem.jsx";
 
 const Shop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-
   const [succesAlert, setSuccesAlert] = useState("");
   const [errAlert, setErrAlert] = useState("");
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     productService
       .getAll()
       .then((result) => setProducts(Object.values(result)))
       .catch((err) => alert(err.message));
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   const succesHandler = (message) => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     setSuccesAlert(message);
+    console.log("her1");
     setTimeout(() => {
       setSuccesAlert("");
     }, 3000);

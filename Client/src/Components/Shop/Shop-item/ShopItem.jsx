@@ -34,7 +34,6 @@ export default function ShopItem({
       return;
     }
     try {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       succesHandler(`Succesfuly purchased ${brand}`);
       await buyService.productBuy(data);
     } catch (error) {

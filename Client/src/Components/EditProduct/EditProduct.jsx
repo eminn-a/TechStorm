@@ -25,11 +25,8 @@ const EditProduct = () => {
     productService.getById(productId).then((result) => {
       setProduct(result);
     });
-  }, [productId]);
-
-  useEffect(() => {
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
-  }, []);
+  }, [productId]);
 
   const editProductSubmitHandler = async (e) => {
     e.preventDefault();

@@ -28,13 +28,12 @@ const Product = () => {
       .getOwnLike(productId, userId)
       .then((liked) => setAlrdyLiked(liked))
       .catch((err) => alert(err.message));
+    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   }, [productId]);
 
-  useEffect(() => {
-    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
-  }, []);
-
   const onBuyClick = async () => {
+    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+
     if (!userId) {
       navigate(Path.Login);
       return;
@@ -52,6 +51,8 @@ const Product = () => {
   };
 
   const onAddStarClick = async () => {
+    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+
     if (!userId) {
       navigate("/login");
       return;

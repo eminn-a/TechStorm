@@ -10,14 +10,11 @@ const CheckOut = () => {
   const [buyedItems, setBuyedItems] = useState([]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
-
-  useEffect(() => {
     buyService
       .getAllbuyed(userId)
       .then((result) => setBuyedItems(result))
       .catch((err) => alert(err.message));
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   async function onDellClick(id) {
