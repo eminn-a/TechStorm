@@ -9,6 +9,10 @@ const LoginFormKeys = {
 
 const Login = () => {
   const { loginSubmitHandler, loginError } = useContext(AuthContext);
+  useEffect(() => {
+    //  scroll to top on page load
+    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
+  }, []);
 
   const { values, onChange, onSubmit } = useForm(
     {
@@ -18,10 +22,6 @@ const Login = () => {
     loginSubmitHandler
   );
 
-  useEffect(() => {
-    //  scroll to top on page load
-    window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
-  }, []);
   return (
     <section className="item content">
       <div className="container toparea">

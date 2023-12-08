@@ -5,12 +5,11 @@ import { useNavigate } from "react-router-dom";
 import productValidation from "../../validation/productValidation.js";
 
 const AddProduct = () => {
+  const [addError, setAdderror] = useState("");
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo({ top: 450, left: 0, behavior: "smooth" });
   }, []);
-
-  const [addError, setAdderror] = useState("");
-  const navigate = useNavigate();
 
   const createAddProductHandler = async (productData) => {
     console.log(productData);

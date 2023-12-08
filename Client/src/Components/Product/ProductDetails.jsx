@@ -58,7 +58,6 @@ const Product = () => {
       }, "5000");
     } catch (error) {
       setErrAlert(error.message);
-      navigate(Path.Shop);
     }
   };
 
@@ -91,8 +90,12 @@ const Product = () => {
   const onDeleteClick = () => {
     const check = confirm(`You want to delete this item: ${product.brand}`);
     if (check) {
-      productService.deleteById(product._id);
-      navigate(Path.Shop);
+      try {
+        productService.deleteById(product._id);
+        navigate(Path.Shop);
+      } catch (error) {
+        alert(err.message);
+      }
     }
   };
 

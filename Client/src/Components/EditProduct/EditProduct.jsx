@@ -33,7 +33,6 @@ const EditProduct = () => {
   }, [productId]);
 
   const editProductSubmitHandler = async (e) => {
-    console.log(product);
     e.preventDefault();
     try {
       productValidation(product);
