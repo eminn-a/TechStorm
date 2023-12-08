@@ -1,6 +1,6 @@
 # TechStrom SoftUni Project
 
-![Project Logo]('/Client/public/images/TechStorm.png')
+![Project Logo](/Client/public/images/TechStorm.png)
 
 ## Overview
 
