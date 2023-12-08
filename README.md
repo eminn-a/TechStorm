@@ -87,7 +87,7 @@ Before you begin, ensure you have the following prerequisites:
 
 4. Access the application in your web browser at [http://localhost:5173/](http://localhost:5173/).
 
-5. Explore the various features and functionalities of the e-commerce platform.
+5. Explore the various features and functionalities of TechStrom project.
 
 ## Contributing
 
