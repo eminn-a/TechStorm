@@ -72,15 +72,17 @@ Before you begin, ensure you have the following prerequisites:
 
 2. You need to start serrver aswell:
 
-   ````bash
+   ```bash
    cd server
    `
+   ```
 
-   ```bash
-   node server.js
-   `
+````
+ ```bash
+ node server.js
+ `
 
-   ````
+````
 
 3. Access the application in your web browser at [http://localhost:5173/](http://localhost:5173/).
 
