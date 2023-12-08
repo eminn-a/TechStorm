@@ -70,9 +70,21 @@ Before you begin, ensure you have the following prerequisites:
    npm run dev
    ```
 
-2. Access the application in your web browser at [http://localhost:5173/](http://localhost:5173/).
+2. You need to start serrver aswell:
 
-3. Explore the various features and functionalities of the e-commerce platform.
+   ````bash
+   cd server
+   `
+
+   ```bash
+   node server.js
+   `
+
+   ````
+
+3. Access the application in your web browser at [http://localhost:5173/](http://localhost:5173/).
+
+4. Explore the various features and functionalities of the e-commerce platform.
 
 ## Contributing
 
