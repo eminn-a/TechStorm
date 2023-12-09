@@ -11,9 +11,9 @@ const AlsoLikeSingleItem = ({ brand, price, imgUrl, _id }) => {
         </div>
         <div className="product-details">
           <Link
-            // onClick={() =>
-            //   window.scrollTo({ top: 450, left: 0, behavior: "smooth" })
-            // }
+            onClick={() =>
+              window.scrollTo({ top: 450, left: 0, behavior: "smooth" })
+            }
             to={`/products/${_id}`}
           >
             <h1>{brand}</h1>
