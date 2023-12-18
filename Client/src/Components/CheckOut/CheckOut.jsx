@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import AuthContext from "../../contexts/authContext";
-import * as buyService from "../../services/productBuyService.js";
-import SingleBuyedItem from "./singleBuyedItem/singleBuyedItem.jsx";
+import AuthContext from "../../Contexts/authContext.jsx";
+import * as buyService from "../../Services/productBuyService.js";
+import SingleBuyedItem from "./SingleBuyedItem/singleBuyedItem.jsx";
 
 const CheckOut = () => {
   const { username } = useContext(AuthContext);

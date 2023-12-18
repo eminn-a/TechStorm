@@ -1,9 +1,9 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import * as authService from "../services/authSrvice.js";
+import * as authService from "../Services/authSrvice.js";
 import Path from "../paths.js";
-import usePersistedState from "../hooks/usePersistedState.js";
-import registerValidation from "../validation/registerValidation.js";
+import usePersistedState from "../Hooks/usePersistedState.js";
+import registerValidation from "../Validation/registerValidation.js";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
