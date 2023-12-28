@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../../Contexts/authContext.jsx";
 import * as buyService from "../../Services/productBuyService.js";
-import SingleBuyedItem from "./SingleBuyedItem/singleBuyedItem.jsx";
+import SingleBuyedItem from "./singleBuyedItem.jsx";
 
 const CheckOut = () => {
   const { username } = useContext(AuthContext);
@@ -26,7 +25,6 @@ const CheckOut = () => {
     }
   }
 
-  console.log(buyedItems);
   return (
     <section className="item content">
       <div className="container toparea">
