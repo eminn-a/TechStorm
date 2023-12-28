@@ -1,5 +1,10 @@
 const registerValidation = (values) => {
-  if (Object.values(values).some((x) => x == "")) {
+  Object.values(values).forEach((x) => {
+    if (x.trim() === "") {
+      throw new Error("Fields can not be empty space!");
+    }
+  });
+  if (Object.values(values).some((x) => x === "")) {
     throw new Error("Fields are required!");
   }
   if (values.username.length < 3) {

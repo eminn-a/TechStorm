@@ -1,5 +1,10 @@
 export const productValidation = (productData) => {
-  if (Object.values(productData).some((x) => x == "")) {
+  Object.values(productData).forEach((x) => {
+    if (x.trim() === "") {
+      throw new Error("Fields can not be empty space!");
+    }
+  });
+  if (Object.values(trimedData).some((x) => x === "")) {
     throw new Error("Fields are required!");
   }
   if (productData.price <= 0) {

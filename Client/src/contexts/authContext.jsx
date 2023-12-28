@@ -16,6 +16,8 @@ export const AuthProvider = ({ children }) => {
     try {
       if (Object.values(values).some((x) => x == "")) {
         throw new Error("Fields are required!");
+      } else if (values.password.trim() === "") {
+        throw new Error("Fields are required!");
       }
       const result = await authService.login(values.email, values.password);
       setAuth(result);
