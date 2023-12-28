@@ -3,8 +3,9 @@ import * as api from "./api.js";
 const endpoints = {
   recent: "/data/laptops?sortBy=_createdOn%20desc&distinct=category",
   all: "/data/laptops?sortBy=_createdOn%20des",
-  getLatest6: "/data/laptops?sortBy=_createdOn%20des&pageSize=6",
-  getLatest3: "/data/laptops?sortBy=_createdOn%20des&pageSize=3",
+  getLatest: (number) => {
+    return `/data/laptops?sortBy=_createdOn%20des&pageSize=${number}`;
+  },
   create: "/data/laptops",
   byId: "/data/laptops/",
   deleteById: "/data/laptops/",
@@ -19,12 +20,8 @@ export async function getAll() {
   return api.get(endpoints.all);
 }
 
-export async function getLatest3() {
-  return api.get(endpoints.getLatest3);
-}
-
-export async function getLatest6() {
-  return api.get(endpoints.getLatest6);
+export async function getLatest(number) {
+  return api.get(endpoints.getLatest(number));
 }
 
 export async function getById(id) {

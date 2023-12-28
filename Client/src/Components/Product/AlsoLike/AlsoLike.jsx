@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom";
 import AlsoLikeSingleItem from "./AlsoLikeSingleItem";
 import { useEffect, useState } from "react";
-import * as productService from "../../../services/productService.js";
+import * as productService from "../../../Services/productService";
 
 const AlsoLike = () => {
   const [latestProduct, setlatestProduct] = useState([]);
 
   useEffect(() => {
     productService
-      .getLatest3()
+      .getLatest(3)
       .then((result) => setlatestProduct(result))
       .catch((err) => alert(err.message));
   }, []);

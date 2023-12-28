@@ -4,7 +4,7 @@ export const productValidation = (productData) => {
       throw new Error("Fields can not be empty space!");
     }
   });
-  if (Object.values(trimedData).some((x) => x === "")) {
+  if (Object.values(productData).some((x) => x === "")) {
     throw new Error("Fields are required!");
   }
   if (productData.price <= 0) {

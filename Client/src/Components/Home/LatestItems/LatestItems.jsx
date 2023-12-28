@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SingleLatestItem from "./SingleLatesItem";
-import * as productService from "../../../services/productService";
+import * as productService from "../../../Services/productService";
 
 const LatestItems = () => {
   const [latestProduct, setlatestProduct] = useState([]);
 
   useEffect(() => {
     productService
-      .getLatest6()
+      .getLatest(6)
       .then((result) => setlatestProduct(result))
       .catch((err) => alert(err.message));
   }, []);
