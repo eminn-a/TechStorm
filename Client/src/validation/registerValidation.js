@@ -1,6 +1,7 @@
 const registerValidation = (values) => {
   Object.values(values).forEach((x) => {
-    if (x.trim() === "") {
+    let trimed = x.trim();
+    if (trimed === "") {
       throw new Error("Fields can not be empty space!");
     }
   });

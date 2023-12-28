@@ -12,7 +12,6 @@ const AddProduct = () => {
   }, []);
 
   const createAddProductHandler = async (productData) => {
-    console.log(productData);
     try {
       productValidation(productData);
       await productService.create(productData);
