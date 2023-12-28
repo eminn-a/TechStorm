@@ -18,7 +18,6 @@ const Shop = () => {
   const succesHandler = (message) => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     setSuccesAlert(message);
-    console.log("her1");
     setTimeout(() => {
       setSuccesAlert("");
     }, 5000);

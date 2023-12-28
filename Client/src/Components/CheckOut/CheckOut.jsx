@@ -25,6 +25,12 @@ const CheckOut = () => {
     }
   }
 
+  const getTotalPrice = () => {
+    let totalPrice = 0;
+    Object.values(buyedItems).forEach((x) => (totalPrice += Number(x.price)));
+    return totalPrice;
+  };
+
   return (
     <section className="item content">
       <div className="container toparea">
@@ -32,6 +38,7 @@ const CheckOut = () => {
           <div className="editContent">
             <h1 className="text-center latestitems">{username}'s Cart</h1>
           </div>
+
           <div className="wow-hr type_short">
             <span className="wow-hr-h">
               <i className="fa fa-star"></i>
@@ -39,6 +46,7 @@ const CheckOut = () => {
               <i className="fa fa-star"></i>
             </span>
           </div>
+
           <div id="edd_checkout_cart_form" method="post">
             <div id="edd_checkout_cart_wrap">
               <table id="edd_checkout_cart" className="ajaxed">
@@ -58,14 +66,20 @@ const CheckOut = () => {
                   />
                 ))}
 
-                <tfoot>
+                {/* <tfoot>
                   <tr className="edd_cart_footer_row">
                     <th colSpan="5" className="edd_cart_total">
-                      {/* <h2>Total:$1458</h2> */}
+                      <h2>Total : {getTotalPrice()}$</h2>
                     </th>
                   </tr>
-                </tfoot>
+                </tfoot> */}
               </table>
+              <br />
+              <div className="underlined-title">
+                <h2 className="text-center latestitems">
+                  Total : {getTotalPrice()}$
+                </h2>
+              </div>
             </div>
           </div>
         </div>

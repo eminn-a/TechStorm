@@ -27,7 +27,7 @@ const SingleBuyedItem = ({
           </div>
         </td>
 
-        <td className="edd_cart_item_price">${price}</td>
+        <td className="edd_cart_item_price">{price}$</td>
         <td className="edd_cart_actions">
           <button className="detailsButton" onClick={onDellClickHandler}>
             Remove
