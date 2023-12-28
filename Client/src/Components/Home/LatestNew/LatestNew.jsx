@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { latestNews } from "../../../services/LatesNewsApi.js";
+import { latestNews } from "../../../Services/latesNewsApi.js";
 import SingleNew from "./SingleNew.jsx";
 
 const LatestNewsTemp = () => {
   const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
-    latestNews()
+    latestNews(3)
       .then((result) => setNewsData(result))
       .catch((err) => alert(err.message));
   }, []);
