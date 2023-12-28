@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import * as productService from "../../services/productService.js";
 import ShopItem from "./Shop-item/ShopItem.jsx";
 

@@ -1,12 +1,12 @@
 import AlsoLikeSingleItem from "./AlsoLikeSingleItem";
 import { useEffect, useState } from "react";
-import * as productService from "../../../Services/productService";
+import * as getService from "../../../Services/productService";
 
 const AlsoLike = () => {
   const [latestProduct, setlatestProduct] = useState([]);
 
   useEffect(() => {
-    productService
+    getService
       .getLatest(3)
       .then((result) => setlatestProduct(result))
       .catch((err) => alert(err.message));

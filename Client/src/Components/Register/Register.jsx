@@ -1,7 +1,6 @@
 import { useContext, useEffect } from "react";
 import AuthContext from "../../contexts/authContext";
 import { useForm } from "../../hooks/useForm";
-import { register } from "../../services/authSrvice";
 
 const registerFormKeys = {
   Email: "email",
