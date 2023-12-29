@@ -1,5 +1,7 @@
 # TechStrom SoftUni Project
 
+Hosting URL: https://techstorm-c66e0.web.app
+
 <img src="/Client/public/images/TechStorm.png" alt="Project Logo" width="700" height="700">
 
 ## Overview
