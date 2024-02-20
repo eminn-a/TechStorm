@@ -23,9 +23,11 @@ const LatestNewsTemp = () => {
             </span>
           </div>
 
-          {newsData.map((x) => (
-            <SingleNew key={x.url} {...x} />
-          ))}
+          {newsData ? (
+            newsData.map((x) => <SingleNew key={x.url} {...x} />)
+          ) : (
+            <h1 className="text-center">No news at the moment</h1>
+          )}
         </div>
       </div>
     </div>

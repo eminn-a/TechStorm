@@ -1,6 +1,6 @@
 import { clearUserData, getAccessToken } from "../utils.js";
 
-const host = "http://localhost:3030";
+const host = "https://api-xevnmevsyq-uc.a.run.app";
 
 async function request(method, url, data) {
   const option = {
