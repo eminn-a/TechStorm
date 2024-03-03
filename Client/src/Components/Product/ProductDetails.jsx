@@ -136,7 +136,7 @@ const Product = () => {
           <div className="row">
             <div className="col-md-8">
               <div className="productbox">
-                <img src={product.imgUrl} className="center" alt="" />
+                <img src={product.imgUrl} alt="" />
                 <div className="clearfix"></div>
                 <br />
                 <div className="product-details text-left">
